@@ -17,6 +17,10 @@ header {height:615px;}
 	margin:0px auto;
 }
 
+.container img {
+	max-width: 100%;
+}
+
 .grid_header {
 	display:grid;
 	padding: 0px 15px;
