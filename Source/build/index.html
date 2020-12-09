@@ -1,0 +1,2608 @@
+<html lang="ru"><head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<!-- <meta content="width=1024" name="viewport"> -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DSD в массы</title>
+
+ <link rel="shortcut icon" href="assets/img/icon.ico" type="image/png">
+
+<meta name="google-site-verification" content="zFDqFxCrMEhtFOTkMwI9feodcul8djIeaeZElIRAKSg" />
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'G-KRX7F4PPR1', 'auto');
+ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+<meta name="description" content="Задумывались ли вы каким образом происходит воспроизведение звука в современных устройствах? Как формируется звуковой сигнал из комбинации единиц и нулей? Почему то или иное устройство воспроизводит звук лучше или хуже, и от чего зависит это субъективное качество звука?...">
+
+<meta name="keywords" content="Аудио, DIY, Цифровой звук">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mak2k2.github.io/">
+<meta property="og:title" content="DSD в массы">
+
+<meta property="og:image" content="https://mak2k2.github.io/assets/img/head.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="image_src" href="https://mak2k2.github.io/assets/img/head.png">
+<meta name="twitter:image" content="https://mak2k2.github.io/assets/img/head.png">
+<meta property="aiturec:image" content="https://mak2k2.github.io/assets/img/head.png">
+<meta property="vk:image" content="https://mak2k2.github.io/assets/img/img(src="head.png">
+
+<meta property="aiturec:title" content="DSD в массы">
+<meta property="aiturec:description" content="Задумывались ли вы каким образом происходит воспроизведение звука в современных устройствах? Как формируется звуковой сигнал из комбинации единиц и нулей? Почему то или иное устройство воспроизводит звук лучше или хуже, и от чего зависит это субъективное качество звука?...">
+
+<meta property="og:description" content="ЗЗадумывались ли вы каким образом происходит воспроизведение звука в современных устройствах? Как формируется звуковой сигнал из комбинации единиц и нулей? Почему то или иное устройство воспроизводит звук лучше или хуже, и от чего зависит это субъективное качество звука?...">
+<meta name="twitter:description" content="Задумывались ли вы каким образом происходит воспроизведение звука в современных устройствах? Как формируется звуковой сигнал из комбинации единиц и нулей? Почему то или иное устройство воспроизводит звук лучше или хуже, и от чего зависит это субъективное качество звука?...">
+<meta name="twitter:title" content="DSD в массы">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="mak2k2.github.io">
+
+<meta property="al:android:url" content="https://mak2k2.github.io/">
+<meta property="al:android:app_name" content="DSD в массы">
+<meta property="al:android:package" content="mak2k2.github.io">
+<meta property="al:windows_phone:url" content="https://mak2k2.github.io/">
+<meta property="al:windows_phone:app_name" content="DSD в массы">
+
+<link href="styles/style.css" rel="stylesheet">
+</head>
+
+<body vlink="purple" link="blue" lang="RU">
+<div class="head">
+	<h1 class="MsoNormal" style="text-align:center" align="center"><b><span style="font-size:40.0pt;line-height:115%">DSD в массы</span></b></h1>
+</div>
+<div class="WordSection1">
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify">Задумывались ли вы каким образом
+происходит воспроизведение звука в современных устройствах? Как формируется
+звуковой сигнал из комбинации единиц и нулей? Почему то или иное устройство воспроизводит
+звук лучше или хуже, и от чего зависит это субъективное качество звука? Наверняка
+задумывались, если вы читаете эту статью. Но как показывает практика
+большинство имеет довольно абстрактное представление о современном звуковом
+тракте, включая даже тех людей для кого цифровой звук — это часть профессии.</p>
+
+<p class="MsoNormal" style="text-align:justify">В этой статье хотелось бы рассказать
+о том, как работают устройства звуковоспроизведения, что такое цифро-аналоговый
+преобразовать(ЦАП), какие виды ЦАПов бывают и как можно собрать свой, на том
+или ином чипе. А также сломать некоторые стереотипы и предложить вариант
+воспроизведения вообще без цифро-аналогового преобразователя, в привычном его
+понимании. Эта идея далеко не нова, но до сих пор считается довольно
+радикальной, и у неё есть как сторонники, так и противники. Надеюсь, меня не
+сожгут на костре «православные» аудиофилы. Извините за бородатый каламбур.</p>
+
+<p class="MsoNormal" style="text-align:justify">Основная цель этого повествования
+- собрать воедино информацию необходимую для понимания устройства цифрового
+тракта звуковоспроизводящих устройств, рассмотреть техническую сторону воспроизведения
+PCM и DSD на практике. Пройти, так сказать, путь от голой теории к конечному
+устройству воспроизведения, заодно разрушив несколько мифов, как аудиофилов,
+так и скептиков. На этом моменте, пожалуй, стоит вставить ремарку, некоторые близко
+к сердцу принимают критику того, во что они свято верят.</p>
+
+<p class="MsoNormal" style="text-align:justify"><b><span lang="EN-US">D</span>isclaimer
+</b></p>
+
+<p class="MsoNormal" style="text-align:justify">Я старался писать максимально
+объективно, все тезисы статьи подкреплены аргументами и ссылками, но от
+оценочных суждений всё же никуда не деться. Прошу прощения если кого-то заденет
+нижеизложенное. <b>Можете</b> <b>считать эту статью личным мнением автора, ни
+коим образом не претендующую на истину в последней инстанции!</b></p>
+
+<p class="MsoNormal" style="text-align:justify">Статья разделена на две основных
+части теоретическую и практическую.</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b><span style="font-size:16.0pt;
+line-height:115%">Теория</span></b></p>
+
+<p class="MsoNormal" style="text-align:justify">Хотелось бы собрать всю важную
+информацию в одной статье, но сами понимаете, что это невозможно. Информации на
+столько много, что уместить, не то что в статье, а даже в одной книге было бы
+сложно. Поэтому к каждой главе и каждому тезису будут добавлены ссылки для тех,
+кто хочет изучить тему более подробно. Начнем с ИКМ.</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b><span style="font-size:14.0pt;
+line-height:115%">PCM(ИКМ)</span></b></p>
+
+<p class="MsoNormal" style="text-align:justify">Про <span class="tgc">импульсно-кодовую
+модуляцию написано уже довольно много, сильно углубляться думаю не стоит. Всю
+информацию легко найти, достаточно вбить в поисковике аббревиатуру </span><span class="tgc"><span lang="EN-US">PCM</span> или ИКМ. Быстро пробегусь по азам, с остановкой
+на некоторых интересных деталях.</span></p>
+
+<p class="MsoNormal" style="text-align:justify"><span class="tgc">Кратко для
+непосвящённых. В цифровом звуке, практически любой формат, за редким
+исключением, является записанным импульсно-кодовым потоком, или потоком</span> <span class="tgc"><span lang="EN-US">PCM</span> - <a href="https://ru.wikipedia.org/wiki/%D0%98%D0%BC%D0%BF%D1%83%D0%BB%D1%8C%D1%81%D0%BD%D0%BE-%D0%BA%D0%BE%D0%B4%D0%BE%D0%B2%D0%B0%D1%8F_%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8F%D1%86%D0%B8%D1%8F"></span><span class="tgc"><span lang="EN-US">pulse</span><span lang="EN-US"> </span></span><span class="tgc"><span lang="EN-US">code</span><span lang="EN-US"> </span></span><span class="tgc"><span lang="EN-US">modulation</span>. </span></a>
+
+<p class="MsoNormal" style="text-align:justify"><span class="tgc">Flac, mp3, wav, </span>Audio
+CD, DVD-Audio и другие форматы, это лишь способ упаковки, так сказать «консервации»
+потока <span class="tgc"><span lang="EN-US">PCM</span>(ИКМ).</span></p>
+
+<p class="MsoNormal" style="text-align:justify"><span class="tgc">&nbsp;</span></p>
+
+<p class="MsoNormal" style="text-align:justify"><span class="tgc"><b>Экскурс в
+историю</b></span></p>
+
+<p class="MsoNormal" style="text-align:justify"><span class="tgc">Теоретические
+основы цифровой передачи звука были разработаны ещё на заре 20 века, учёные &nbsp;задумались,
+как можно передать звуковой сигнал на большое расстояние, не по телефону, а
+довольно странным, для того времени, способом. Разделить звуковую волну на
+небольшие части и отправлять получателю в некоем математическом представлении.
+Причём так, чтобы получатель, в свою очередь, мог восстановить исходную волну и
+прослушать запись. Основная идея заключалась в том, чтобы увеличить пропускную
+способность «эфира». В результате расчётов в 1933 году увидела свет</span> теорема
+В. А. Котельникова. Да, да, именно Котельникова! А не как многие пишут на
+западный манер «Найквиста- Шеннона», т.к. была издана на 16 лет раньше Клода
+Шеннона. Да, Гарри Найквист был первым, кто затронул эту тему в 1927 году, он
+рассчитал минимальную частоту дискретизации для передачи формы волны, впоследствии
+названной в его честь «частотой Найквиста», но ни о какой теореме <a href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BE%D1%80%D0%B5%D0%BC%D0%B0_%D0%9A%D0%BE%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%D0%B0">речи не шло.</p>
+
+<p class="MsoNormal" style="text-align:justify"></a></p>
+
+<p class="MsoNormal" style="text-align:justify">Суть теоремы проста - непрерывный
+сигнал можно представить в виде интерполяционного ряда, состоящего из
+дискретных отчётов, по которым можно заново восстановить сигнал. Для
+возможности восстановления исходного(приблизительно) состояния сигнала, частота
+дискретизации должна равняться удвоенной(как минимум) верхней граничной частоте
+этого сигнала.</p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><img src="assets/img/image001.png" width="624" height="279" border="0"></p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify">Много воды утекло с момента
+публикации, но теорема так и не была востребована. И только с приходом цифровой
+эпохи ей всё-таки нашлось применение, пригодилась теорема и при разработке
+формата CDDA(1980 г.) - Compact Disc Digital Audio, в простонародье называемым Audio
+CD или Red Book. </p>
+
+<p class="MsoNormal" style="text-align:justify">Характеристики его следующие:</p>
+
+<p class="MsoNormal" style="text-align:justify">Частота дискретизации – 44.1 кГц.</p>
+
+<p class="MsoNormal" style="text-align:justify">Разрядность квантования – 16 бит</p>
+
+<p class="MsoNormal" style="text-align:justify"><i><sup>*</sup>Частота
+дискретизации — частота взятия отсчётов сигнала при его дискретизации.
+Измеряется в герцах</i></p>
+
+<p class="MsoNormal" style="text-align:justify"><i><sup>*</sup>Разрядность
+квантования — количество двоичных разрядов, выражающих амплитуду сигнала.
+Измеряется в битах </i></p>
+
+<p class="MsoNormal" style="text-align:justify">Из теоремы Котельникова была рассчитана
+частота дискретизации 44.1 кГц. Расчёт был прост, слух среднестатистического
+человека не способен(вроде как) уловить звук за пределами, по разным данным:
+19, 20, 22 кГц. Вероятно, частота 22кГц. и была выбрана в качестве верхней
+граничной.</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;Отсюда:</p>
+
+<p class="MsoNormal" style="text-align:justify"><b><span style="font-size:12.0pt;
+line-height:115%">22000 * 2(</span></b><span style="font-size:12.0pt;
+line-height:115%">удвоение верхней граничной по теореме<b>) = 44000 + 100 =
+44100 Герц</b></span></p>
+
+<p class="MsoNormal" style="text-align:justify">Всё вроде бы понятно, но
+погодите, откуда взялось 100 Герц? Одна из возможных причин, как пишут на
+форумах: Небольшой запас на случай ошибок или передискретизации. И даже в
+Википедии, в статье про частоту Найквиста, то же приведены эти цифры, но
+обоснование крайне невнятное. На самом деле, такая частота была выбрана из
+соображений совместимости со стандартом телевещания PAL, подробнее <a href="https://ru.wikipedia.org/wiki/%D0%A7%D0%B0%D1%81%D1%82%D0%BE%D1%82%D0%B0_%D0%B4%D0%B8%D1%81%D0%BA%D1%80%D0%B5%D1%82%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8">тут</p>
+
+<p class="MsoNormal" style="text-align:justify"></a>
+</p>
+
+<p class="MsoNormal" style="text-align:justify">Разрядность формата CDDA была
+выбрана 16 бит или 65536 отчётов, что равняется динамическому диапазону примерно
+в <span style="font-size:15.5pt;line-height:115%">96 дБ. Выбор такого большого
+числа отсчётов был сделан не случайно, во первых из-за сильного влияния шумов
+квантования</span>, во вторых для обеспечения динамического диапазона выше(по
+крайней мере на бумаге) чем у главных тогда конкурентов: кассетных записей и
+виниловых пластинок. Подробнее об этом будет рассказано в разделе про
+цифро-аналоговые преобразователи.</p>
+
+<p class="MsoNormal" style="text-align:justify">Про дальнейшее развитие PCM(ИКМ)
+можно рассказать просто – умножение на два.</p>
+
+<p class="MsoNormal" style="text-align:justify">Появились другие частоты
+дискретизации: Сначала добавилась частота дискретизации 48 кГц. и в дальнейшем
+основанные на ней частоты 96, 192 и 384 кГц. &nbsp;Частота 44,1 кГц. также
+удваивалась до 88.2, 176,4 и 352,8 кГц. Разрядность же увеличилась с 16&nbsp; до 24,
+а позднее и до 32 бит.</p>
+
+<p class="MsoNormal" style="text-align:justify">Следующим шагом после создания
+CDDA В1980 г. стал формат DAT- Digital Audio Tape, выпущенный в 1987 году. Частота
+дискретизации в нём составила 48 кГц., разрядность квантования не изменилась. Хотя
+формат провалился, частота дискретизации 48 кГц. прижилась на студиях
+звукозаписи, как пишут, из-за удобства цифровой обработки. </p>
+
+<p class="MsoNormal" style="text-align:justify">В 1999году был выпущен формат DVD-Audio,
+который позволял записать на один диск 6 стерео дорожек с частотой
+дискретизации 96 кГц. и разрядностью 24бит, или 2 стерео дорожки с частотой 192
+кГц. 24бит. В том же году был представлен формат SACD - Super Audio CD, но выпущен
+он будет позднее, подробнее рассказано в разделе про DSD.</p>
+
+<p class="MsoNormal" style="text-align:justify">Это основные форматы, которые считаются
+стандартом для цифровых звукозаписей на носителях. На этом с исторической
+справкой, пожалуй, закончим и перейдем к конкретике. Рассмотрим, как передаются
+данные в цифровом звуковом тракте.</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b>Структура цифрового звукового
+тракта</b></p>
+
+<p class="MsoNormal" style="text-align:justify">При проигрывании музыки
+происходит примерно следующее: Плеер при помощи так называемого «кодека»,
+выполненного в виде устройства или программы, производит распаковку файла в том
+или ином формате(<span lang="EN-US">flac</span>, <span lang="EN-US">mp</span>3 и
+д.р.), или считывает данные с <span lang="EN-US">CD</span>, DVD-Audio, <span lang="EN-US">SACD</span><span lang="EN-US"> </span>диска таким образом получая
+стандартный <span lang="EN-US">PCM</span>(ИКМ) поток. Затем этот поток передаётся
+через: <span lang="EN-US">USB</span>, <span lang="EN-US">LAN</span>, <span lang="EN-US">S</span>/<span lang="EN-US">PDIF</span>, <span lang="EN-US">PCI</span> и
+т.д. в устройство, которое обычно называют <span lang="EN-US">I</span>2<span lang="EN-US">S</span> конвертер. В свою очередь конвертер преобразует полученные
+данные в так называемые кадры интерфейса передачи данных “<span lang="EN-US">I</span>2<span lang="EN-US">S</span>”. Не путать “<span lang="EN-US">I</span>2С”! </p>
+
+<p class="MsoNormal" style="text-align:justify"><img id="Рисунок 12" src="assets/img/image002.jpg" width="738" height="375" border="0"></p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b>I2S</b></p>
+
+<p class="MsoNormal" style="text-align:justify">I2S - это последовательная шина передачи
+цифрового аудио потока, на данный момент является практически стандартом для
+подключения источника сигнала(компьютер, проигрыватель) к цифро-аналоговому
+преобразователю. Именно через неё подключается напрямую или опосредованно
+подавляющее большинство ЦАПов. Шина I2S может состоять из трёх, четырёх и даже
+пяти контактов. Существуют и другие стандарты передачи цифрового аудио потока,
+но т.к. используются они гораздо реже, в рамках данной статьи рассматриваться
+не будут. Выход(вход) <span lang="EN-US">I</span>2<span lang="EN-US">S</span><span lang="EN-US"> </span>на печатных платах обычно выглядит примерно так:</p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><img id="Рисунок 13" src="assets/img/image003.jpg" alt="WEILIANG-PCM2706-USB-I2S" width="482" height="486" border="0"></p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;- <b><span lang="EN-US">continuous</span><span lang="EN-US"> </span></b><b><span lang="EN-US">serial</span><span lang="EN-US"> </span></b><b><span lang="EN-US">clock</span>(</b><b><span lang="EN-US">SCK</span> )</b> – Тактовый
+сигнал битовой синхронизации(может называться <span lang="EN-US">BCK</span> или <span lang="EN-US">BCLK</span>)</p>
+
+<p class="MsoNormal" style="text-align:justify">- <b><span lang="EN-US">word</span><span lang="EN-US"> </span></b><b><span lang="EN-US">select</span>(</b><b><span lang="EN-US">WS</span>)</b> - Тактовый сигнал кадровой синхронизации(может
+называться <span lang="EN-US">LRCK</span><span lang="EN-US"> </span>или FSYNC)</p>
+
+<p class="MsoNormal" style="text-align:justify">- <b>serial data(SD)</b> - Сигнал
+передаваемых данных(может называться <span lang="EN-US">DATA</span>, <span lang="EN-US">SDOUT</span><span lang="EN-US"> </span>или <span lang="EN-US">SDATA</span>).
+Как правило, данные передаются от передатчика к приемнику, но бывают
+устройства, которые могут выступать и приемником и передатчиком одновременно. В
+таком случае может присутствовать ещё один контакт - <b>SDIN</b>- <b>serial
+data in</b>, по этому контакту данные движутся в направлении приёма, а не
+передачи.</p>
+
+<p class="MsoNormal" style="text-align:justify">SD или SDOUT служит для
+подключения цифро-аналогового преобразователя(ЦАПа), тогда как SDIN используется
+для подключения аналого-цифрового преобразователя(АЦП) к шине I2S.</p>
+
+<p class="MsoNormal" style="text-align:justify">Ещё может присутствовать контакт <b>Master
+Clock</b>(MCLK или <span lang="EN-US">MCK</span>), это отдельная синхронизация
+между передающим и принимающим устройствами. Используется для синхронизации
+приёмника и передатчика от одного генератора тактовых импульсов. Такая
+синхронизация может снизить коэффициент ошибок передачи данных. Для внешней
+синхронизации MCLK служат два генератора тактовых импульсов с частотой 22579 кГц.
+и 24576 кГц. Первый - 22579 кГц. для частот кратных 44.1 кГц.(88.2, 176.4,
+352.8 кГц.) , второй - 24576 кГц. для частот кратных 48 кГц.(96, 192, 384 кГц.).
+Так же могут встречаться генераторы на &nbsp;45158.4 кГц. и 49152 кГц., в мире
+цифрового звука вообще всё любят умножать на два.</p>
+
+<p class="MsoNormal" style="text-align:justify">В I2S в основном используются три
+контакта <span lang="EN-US">SCK</span>, <span lang="EN-US">WS</span>, SD остальные
+контакты опциональны. Дополнительную информацию можете найти <a href="https://ru.wikipedia.org/wiki/I%C2%B2S"> здесь. </a></p>
+
+<p class="MsoNormal" style="text-align:justify"><b>Frame, или кадр I2S</b>
+выглядит примерно следующим образом:</p>
+
+<p class="MsoNormal" style="text-align:justify"><img src="assets/img/image004.jpg" alt="Снимок экрана от 2017-10-27 00-30-35" width="769" height="438" border="0"></p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify">По каналу <span lang="EN-US">SCK</span><span lang="EN-US"> </span>&nbsp;передаются синхроимпульсы, под которые синхронизированы
+кадры. По каналу WS передаётся длинна «слова», при этом используется как
+состояние логической единицы, так и состояние логического ноля. Если на
+контакте WS логическая единица, значит, передаются данные правого канала, если
+ноль, то данные левого канала. По SD передаются биты данных - значения
+амплитуды звукового сигнала при квантовании, те самые 16,24 или 32 бита. Ни
+каких контрольных сумм и служебных каналов на шине I2S не предусмотрено. Если
+данные при передаче потеряются, возможности восстановить их не существует.
+Часто бывают, на каких-нибудь дорогих ЦАПах, внешние разъёмы для подключения к
+I2S. Использование таких разъёмов и кабелей может плохо отразиться на звуке,
+вплоть до появления «артефактов» и заиканий, всё будет зависеть от качества и
+длинны провода. <span lang="EN-US">I</span>2<span lang="EN-US">S</span><span lang="EN-US"> </span>это всё же внутрисхемный разъём, длина проводников от
+передатчика до приёмника должна стремиться к нулю.</p>
+
+<p class="MsoNormal" style="text-align:justify">Рассмотрим, как передаётся PCM
+поток по шине I2S.При передаче PCM 44.1 кГц. с разрядностью16 бит, длинна слова
+на канале SD будет соответствовать этим 16ти битам, длинна кадра будет 32 бита(правый
+канал + левый). Но чаще всего передающие устройства используют длину слова 24
+бита.</p>
+
+<p class="MsoNormal" style="text-align:justify"><img id="Рисунок 15" src="assets/img/image005.jpg" width="750" height="108" border="0"></p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify">А при воспроизведении PCM 44.1х16
+старшие биты либо попросту игнорируются т.к. заполнены нолями, либо в случае со
+старыми мультибитными ЦАП могут перейти на следующий кадр. Длина «слова»(<span lang="EN-US">WS</span>) может также зависеть от плеера, через который воспроизводится
+музыка, а также от драйвера устройства воспроизведения.</p>
+
+<p class="MsoNormal" style="text-align:justify">Альтернативой <span lang="EN-US">PCM</span>(ИКМ)
+и <span lang="EN-US">I</span>2<span lang="EN-US">S</span><span lang="EN-US"> </span>является
+запись звукового сигнала в <span lang="EN-US">DSD</span>, этот формат развивался
+параллельно ИКМ и теоремы Котельникова, хотя некоторое влияние она конечно
+оказала. Для улучшения качества звучания, по сравнению с <span lang="EN-US">CDDA</span>,
+упор был сделан не на повышение разрядности квантования, как в формате <span lang="EN-US">DVD</span><span lang="EN-US"> </span><span lang="EN-US">audio</span>, а
+на увеличение частоты дискретизации.</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b><span style="font-size:14.0pt;
+line-height:115%">DSD</span></b></p>
+
+<p class="MsoNormal" style="text-align:justify">DSD - Direct Stream Digital берет
+свое начало в лабораториях фирм Sony и Philips, впрочем, как и другие форматы
+рассматриваемые в этой статье.</p>
+
+<p class="MsoNormal" style="text-align:justify"><b><span style="font-size:14.0pt;
+line-height:115%">&nbsp;</span></b></p>
+
+<p class="MsoNormal" style="text-align:justify"><b>SACD</b></p>
+
+<p class="MsoNormal" style="text-align:justify">Впервые DSD увидел свет на <span lang="EN-US">Super</span><span lang="EN-US"> </span><span lang="EN-US">Audio</span><span lang="EN-US"> </span><span lang="EN-US">CD</span> дисках в далёком 2002 году.</p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><img id="Рисунок 16" src="assets/img/image006.jpg" alt="SACD%20this%20theater" width="629" height="445" border="0"></p>
+
+<p class="MsoNormal" style="text-align:justify"><b>&nbsp;</b></p>
+
+<p class="MsoNormal" style="text-align:justify">На тот момент SACD был просто
+шедевр инженеров, в нём был применен совершенно иной способ записи и
+воспроизведения, очень близкий к аналоговым устройствам, реализация
+одновременно была проста и изящна. Носитель оснастили защитой от копирования, да
+и, владея новой технологией ни какие пираты были не страшны. Идея проста,
+компании Sony и Philips стали выпускать «закрытые» устройства исключительно для
+воспроизведения, без какой-либо возможности копирования дисков. Продавали
+студиям оборудование для записи, но при этом контроль за выпуском SACD дисков
+оставили себе.</p>
+
+<p class="MsoNormal" style="text-align:justify">Как знать, может формат CACD мог
+бы обрести популярность сравнимую с Audio CD, если бы не стоимость устройств
+воспроизведения. Безосновательно накручивая цены на проигрыватели, компании
+сами стали препятствовать популярности своего формата. А позже допустили ещё
+одну ошибку - для продвижения игровой приставки <span lang="EN-US">S</span>ony PlayStation,
+компания <span lang="EN-US">Sony</span> добавила возможность воспроизведения SACD
+на этой приставке. Спасибо хакерам! Приставку взломали и появилась возможность
+копировать диски SACD в ISO образы, которые в дальнейшем можно записать на
+обычную <span lang="EN-US">DVD</span><span lang="EN-US"> </span>болванку и
+воспроизводить на плеере от конкурентов, или извлечь дорожки для
+воспроизведения на компьютере.</p>
+
+<p class="MsoNormal" style="text-align:justify">Звукозаписывающие компании тоже
+хороши. Хотя формат и был высокого разрешения, но вопреки ожиданиям меломанов,
+на студиях записывали в DSD музыку не с мастер-ленты, а брали цифровую запись в
+<span lang="EN-US">PCM</span>(ИКМ) пересводили, обрабатывали всем подряд: лимитерами,
+компрессорами, дитерингом с нойз-шейпингом, и различными цифровыми фильтрами. В
+итоге на выходе получался такой стерильный и сублимированный звук, что даже CD
+audio по сравнению с <span lang="EN-US">SACD</span><span lang="EN-US"> </span>мог
+звучать гораздо лучше. Этими действиями они угробили популярность SACD на корню,
+заодно подорвав доверие людей к любому новому формату. Кстати, привет
+аудиофилам! С виниловыми пластинками происходит то же самое, эта порочная
+практика применяется и по сей день. Студии печатают винил с цифровой записи,
+даже если у них есть запись на мастер-ленте, сейчас на виниле запросто может
+оказаться 44.1х16.</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b>&nbsp;DSD</b></p>
+
+<p class="MsoNormal" style="text-align:justify">Что же представляет собой DSD?
+Это однобитный поток с очень высокой, по сравнению с PCM, частотой
+дискретизации, к тому же используется иной вид модуляции – PDM(плотностно-импульсная
+модуляция). Запись звука в таком формате производится однобитным АЦП(Аналого-цифровым
+преобразователем), сейчас такие АЦП на основе сигма-дельта модуляции
+используются повсеместно. Процесс записи происходит примерно так: Пока
+амплитуда волны возрастает, на выходе АЦП логическая единица, когда амплитуда
+падает, на выходе логический ноль, среднего значения быть не может. Сравнение происходит
+с предыдущим значением амплитуды волны.</p>
+
+<p class="MsoNormal" style="text-align:justify"><img id="Рисунок 17" src="assets/img/image007.png" alt="1024px-PCM-vs-DSD" width="414" height="516" border="0"></p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><span lang="EN-US">DSD</span>
+позволяет достичь важных преимуществ по сравнению с <span lang="EN-US">PCM</span>:</p>
+
+<p class="MsoListParagraphCxSpFirst" style="margin-left:19.5pt;text-align:justify;
+text-indent:-18.0pt">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Более точная прорисовка волны</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:19.5pt;text-align:justify;
+text-indent:-18.0pt">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Более высокая помехоустойчивость</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:19.5pt;text-align:justify;
+text-indent:-18.0pt">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Боле простой способ коммутации и передачи цифрового потока</p>
+
+<p class="MsoListParagraphCxSpLast" style="margin-left:19.5pt;text-align:justify;
+text-indent:-18.0pt">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Теоретически есть возможность уменьшить стоимость, упростив схему ЦАПа,
+но из-за «обратной совместимости» со старыми форматами, производители вряд ли
+пойдут на это.</p>
+
+<p class="MsoNormal" style="text-align:justify">Изначально на SACD дисках
+использовался формат «DSD x64» c частотой дискретизации 2822.4 кГц., за основу
+была взята частота дискретизации Audio CD 44.1кГц. увеличенная в 64 раза,
+оттуда и название <span lang="EN-US">x</span>64. На данный момент реально
+используются DSD:</p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-align:justify;text-indent:-18.0pt"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>x64 = 2822,4 кГц.</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-align:justify;text-indent:-18.0pt"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>x128 = 5644,8 кГц.</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-align:justify;text-indent:-18.0pt"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>x256 = 11289,6 кГц.</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-align:justify;text-indent:-18.0pt"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>x512 = 22579,2 кГц.</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-align:justify;text-indent:-18.0pt"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>заявлен DSD x1024 … </p>
+
+<p class="MsoNormal" style="text-align:justify">Ещё существует некий
+промежуточный формат между PCM и DSD, он носит название DXD - Digital eXtreme
+Definition. Этот формат, по сути, есть <span lang="EN-US">PCM</span>(ИКМ), только
+высокого разрешения 352.8 кГц. или 384 кГц., с разрядностью квантования 24 или
+32 бита. Применяется на студиях для обработки и последующего сведения. Но такой
+подход ущербен: во-первых, он нивелирует преимущества DSD, во-вторых, размер
+файлов получается больше чем у <span lang="EN-US">DSD</span>. На текущий момент
+флагманские ЦАПы принимают на I2S входе PCM(ИКМ) поток с частотой дискретизации
+до 768 кГц. и разрядностью до 32 бит. Боюсь даже считать, какой объём на жестком
+диске будет занимать один альбом в таком разрешении.</p>
+
+<p class="MsoNormal" style="text-align:justify">Сейчас DSD практически отделился
+от SACD. Чаще формат DSD теперь можно встретить упакованным в файлы с
+расширением DSF и DFF. Выпущено множество проигрывателей с возможностью записи
+в DSF и DFF, любители хорошего звука, все чаще и чаще, оцифровывают виниловые
+пластинки именно в <span lang="EN-US">DSD</span> формате. На звукозаписывающих студиях
+ситуация сложнее, ни кто не хочет вкладывать ресурсы в малопопулярный формат, и
+клепают ширпотреб - 44.1х16. Более подробную информацию о DSD можете прочесть
+на  <a href="https://ru.wikipedia.org/wiki/DSD">Википедии</a>
+, перейдем к деталям. </p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b>Коммутация DSD и передача
+данных </b></p>
+
+<p class="MsoNormal" style="text-align:justify">Для передачи цифрового потока в
+DSD используется трёх контактная схема подключения:</p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-align:justify;text-indent:-18.0pt">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>DSD
+Clock Pin(DCLK) – синхронизация</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-align:justify;text-indent:-18.0pt">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang="EN-US">DSD</span><span lang="EN-US"> </span><span lang="EN-US">Lch</span><span lang="EN-US"> </span><span lang="EN-US">Data</span><span lang="EN-US"> </span><span lang="EN-US">Input</span><span lang="EN-US"> </span><span lang="EN-US">Pin</span>(<span lang="EN-US">DSDL</span>) – данные левого канала</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-align:justify;text-indent:-18.0pt">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang="EN-US">DSD</span><span lang="EN-US"> </span><span lang="EN-US">Rch</span><span lang="EN-US"> </span><span lang="EN-US">Data</span><span lang="EN-US"> </span><span lang="EN-US">Input</span><span lang="EN-US"> </span><span lang="EN-US">Pin</span>(<span lang="EN-US">DSD</span>R) – данные правого канала</p>
+
+<p class="MsoNormal" style="text-align:justify"><img src="assets/img/image008.jpg" width="624" height="361" border="0"></p>
+
+<p class="MsoNormal" style="text-align:justify">В отличие от I2S, передача данных
+DSD предельно упрощена. DCLK - задаёт тактовую частоту битовой синхронизации, а
+по контактам <span lang="EN-US">DSDL</span> и <span lang="EN-US">DSD</span>R
+последовательно передаются сами данные левого и правого канала соответственно.
+Ни каких ухищрений тут нет, запись и воспроизведение в DSD происходит побитно.
+Такой подход даёт максимальное приближение к аналоговому сигналу, а за счёт
+высокой частоты уменьшаются шумы квантования и на порядок повышается точность
+воспроизведения.</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b>DOP</b></p>
+
+<p class="MsoNormal" style="text-align:justify">Для теоретической части этот
+раздел необязателен, но для передачи <span lang="EN-US">DSD</span> потока часто
+применяется именно DoP, поэтому упомянуть о нем стоит.</p>
+
+<p class="MsoNormal" style="text-align:justify">DoP - DSD over PCM. Открытый
+стандарт передачи данных DSD через кадры PCM. Стандарт создан для того, чтобы передавать
+поток через драйвера и устройства, не поддерживающие прямую передачу DSD(DSD
+native).</p>
+
+<p class="MsoNormal" style="text-align:justify">Принцип работы заключается в
+следующем:</p>
+
+<p class="MsoNormal" style="text-align:justify">В 24 битном кадре PCM старшие 8
+бит заполняются единицами и это становится своеобразным маркером, обозначающим,
+что в данный момент передаются данные DSD, оставшиеся 16 бит заполняются
+последовательно битами данных DSD.</p>
+
+<p class="MsoNormal" style="text-align:justify"><img src="assets/img/image009.jpg" width="623" height="122" border="0"></p>
+
+<p class="MsoNormal" style="text-align:justify">Для передачи DSD x64 с частотой
+однобитного потока 2822.4 кГц. необходима частота дискретизации PCM равная 176.4
+кГц.(176.4*16 = 2822.4 кГц.). Для передачи DSD x128 с частотой 5644.8 кГц. уже
+потребуется частота дискретизации PCM 352.8 кГц. Подробнее можете прочесть  <a href="http://dsd-guide.com/sites/default/files/white-papers/DoP_openStandard_1v1.pdf">тут</a></p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b><span style="font-size:14.0pt;
+line-height:115%">Цифро-аналоговые преобразователи</span></b></p>
+
+<p class="MsoNormal" style="text-align:justify">А теперь перейдем к ЦАП - цифро-аналоговым
+преобразователям. Это очень важный и сложный раздел который покрыт завесой
+тайны и аудиофильской мистикой. Изложенную здесь информацию пришлось собирать
+довольно долго, буквально по крупицам. К тому же вокруг цифро-аналоговых
+преобразователей очень много спекуляций из противоборствующих лагерей: маркетологов,
+аудиофилов и скептиков.</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b>Мультибитные ЦАП</b></p>
+
+<p class="MsoNormal" style="text-align:justify">Вначале, когда только появился
+формат Audio CD, PCM(ИКМ) в аналоговый сигнал преобразовывали при помощи
+мультибитных ЦАП, построены они были на основе резистивной матрицы постоянного
+импеданса, так называемая R-2R матрица.</p>
+
+<p class="MsoNormal" style="text-align:justify">Упрощенная схема мультибитного
+ЦАП выглядит так:</p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><img id="Рисунок 20" src="assets/img/image010.jpg" alt="r2r_dac-sch" width="559" height="273" border="0"></p>
+
+<p class="MsoNormal" style="text-align:justify">Принцип работы мультибитных ЦАПов
+заключается в следующем:</p>
+
+<p class="MsoNormal" style="text-align:justify"><span lang="EN-US">PCM</span><span lang="EN-US"> </span>поток разделяется на два канала, левый и правый, и переводится
+из последовательного представления сигнала в параллельное, например при помощи сдвиговых
+регистров. Необходимо записывать в буфер одного регистра данные правого канала,
+а в буфер другого левого. И передавать одновременно по параллельным портам с
+заданной частотой дискретизации(чаще всего 44.1кГц.), как на изображении ниже, только
+параллельных выходов будет не 8, а 16, потому что разрядность 16 бит. В
+зависимости от положения в кадре старшие и младшие биты будут иметь на пути следования
+электрического тока разное сопротивление, т.к. количество последовательно
+подключенных резисторов будет разное. Так и должно быть, чем старше бит, тем
+больше должна быть его значимость.</p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><img id="Рисунок 21" src="assets/img/image011.jpg" width="511" height="471" border="0"></p>
+
+<p class="MsoNormal" style="text-align:justify">Мультибитные ЦАП, или попросту
+мультибиты, требуют очень качественных компонентов и очень точной подгонки
+резисторов, т.к. любые неточности в номиналах компонентов суммируются, и могут
+привести к серьёзным отклонениям от исходной волны, создавая погрешность в
+несколько разрядов квантования.</p>
+
+<p class="MsoNormal" style="text-align:justify">В мультибитных ЦАП 80 годов нет
+ни каких манипуляций с <span lang="EN-US">PCM</span>(ИКМ). Подключаются
+мультибиты напрямую к шине <span lang="EN-US">I</span>2<span lang="EN-US">S</span><span lang="EN-US"> </span>и проигрывают ИКМ как есть: пришли данные правого канала(16
+бит) – подождал данные второго канала(16 бит) – выдал оба канала на резистивную
+матрицу, и так с частотой 44.1 кГц. Частота и разрядность, на тот момент,
+определялись форматом С<span lang="EN-US">DDA</span>, который стал практически
+эталонной реализацией теоремы Котельникова, так же как и формат <span lang="EN-US">MP</span>3 позднее(с некоторыми оговорками). Только начиная с
+формата <span lang="EN-US">DVD</span><span lang="EN-US"> </span><span lang="EN-US">audio</span><span lang="EN-US"> </span>был пересмотрен подход к оцифровке и воспроизведению звука.</p>
+
+<p class="MsoNormal" style="text-align:justify">Так работали простейшие ЦАПы,
+позднее стали использовать преобразователи с более сложным устройством. Кроме
+модернизации схем и улучшения качества компонентов в мультибитных ЦАПах стали
+применять технологию Oversampling. Oversampling – <span style="font-size:15.5pt;
+line-height:115%">это передискретизация цифрового потока с повышением частоты
+дискретизации и разрядности квантования для уменьшения шума квантования.</span></p>
+
+<p class="MsoNormal" style="text-align:justify">Для того что бы объяснить, что
+стало причиной использования технологии Oversampling, необходимо рассказать о
+применении теоремы Котельникова на практике. Всё далеко не так радужно, как
+происходит в мире математики, и ни о каких «с любой точностью», как написано в
+теореме, и речи не идёт.</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b>Теорема Котельникова</b></p>
+
+<p class="MsoNormal" style="text-align:justify">Подробно описывать теорему не
+вижу смысла, если кому то интересно всегда можно обратиться к первоисточникам 
+<b><a href="http://www.vakotelnikov.com/Napravlenie_trudov/Sampling_teorem/010_050_o_propusknoy_sposobnosti_efira_i_provoloki_1933.pdf">В.
+А. Котельников «О ПРОПУСКНОЙ СПОСОБНОСТИ «ЭФИРА» И ПРОВОЛОКИ В ЭЛЕКТРОСВЯЗИ»</b></a></p>
+
+<p class="MsoNormal" style="text-align:justify">Владимир Александрович Котельников
+был великим человеком, он внёс неоценимый вклад в науку. Ни в коей мере не хочу
+принижать его заслуг! Но всё же придётся выступить в роли критика, и даже не
+самой теоремы, а её применения в практической плоскости.</p>
+
+<p class="MsoNormal" style="text-align:justify">Часто теорему Котельникова
+воспринимают очень буквально и возводят в а6солют, конечно это не правильно! О
+сколько я прочитал статей «твердолобых» скептиков про «чудесные» форматы <span lang="EN-US">MP</span>3, <span lang="EN-US">CDDA</span><span lang="EN-US"> </span>и
+про «злых» аудиофилов, которые спят и видят, как бы разорить честных граждан
+«впаривая» свои <span lang="EN-US">DVD</span>-<span lang="EN-US">Audio</span><span lang="EN-US"> </span>и <span lang="EN-US">DSD</span>. Конечно же главным аргументом
+у них выступает теорема Котельникова.</p>
+
+<p class="MsoNormal" style="text-align:justify">Начнём с того, что так называемой
+частоты Найквиста(дискретизации) на практике недостаточно для передачи точной
+формы волны, т.к. из-за не идеальности условий появляются шумы и искажения.
+Шумы квантования при записи звукового сигнала, шумы округления при его
+обработке и воспроизведении. Принято считать, что шумы квантования не могут
+быть меньше половины младшего разряда квантования, это обусловлено тем, что в
+процессе квантованя звукового сигнала происходит округление до ближайшего разряда,
+в большую или меньшую сторону. Шумы округления, &nbsp;также не могут быть меньше
+половины младшего разряда или, как его ещё называют, шага квантования. Есть ещё
+собственные шумы АЦП и ЦАП, но для них сложно привести точную цифру т.к. очень
+много факторов оказывают влияние: конкретная реализация, количество и качество
+компонентов и даже окружающая среда. Обычно собственные шумы составляют
+несколько разрядов квантования. Из этого следует, что частота дискретизации
+должна быть значительно выше частоты Найквиста(Котельникова), что бы
+компенсировать потери при оцифровке и последующем воспроизведении цифровой
+записи.</p>
+
+<p class="MsoNormal" style="text-align:justify"><img src="assets/img/image012.png" width="257" hspace="12" height="430" align="left">Приведу пример из
+конспекта лекций:</p>
+
+<p class="MsoNormal" style="text-align:justify">За <b>А</b> – взята амплитуда
+сигнала.</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify">«<i>Как видно, пока пиковое
+значение входного сигнала не превышает 0,5 кванта, выходной сигнал квантователя
+равен нулю, т.е. имеет место центральная отсечка. Это приводит к нелинейности
+преобразования и возникновению больших искажений при малых амплитудах ЗС. Пока значение
+A &gt; 1,5 выходной сигнал демодулятора представляет собой последовательность
+прямоугольных импульсов, у которых с изменением уровня ЗС меняется длительность
+(рис.3.7). Это обусловлено ошибками квантования, которые соизмеримы с
+амплитудой входного сигнала. Искажения начинают заметно уменьшаться только при
+A &gt; 2 </i>.»</p>
+
+<p class="MsoNormal" style="text-align:justify; margin-bottom: 50px;"><b><a href="http://window.edu.ru/resource/682/77682/files/%D0%A1%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%D1%8B%20%D0%B8%20%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B%20%D1%86%D0%B8%D1%84%D1%80%D0%BE%D0%B2%D0%BE%D0%B9%20%D0%B7%D0%B2%D1%83%D0%BA%D0%BE%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B8%20.pdf">Вологдин Э.И. «Стандарты и
+системы цифровой звукозаписи»</a></b></p>
+
+<p class="MsoNormal" style="text-align:justify"></p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify">В приведённой цитате речь идет только
+о шуме квантования, причём взято минимально возможное значение(1/2 шага
+квантования). Шумы округления оказывают примерно такое же влияние(минимум 1/2
+шага квантования).</p>
+
+<p class="MsoNormal" style="text-align:justify">Кроме шумов, в цифровой записи
+могут появляться искажения вызванные использованием ФНЧ – фильтра низких
+частот. По теореме Котельникова, необходимо ограничить частоту звукового
+сигнала фильтром и принять её за верхнюю граничную, из которой потом, нехитрым
+образом(умножением на 2), вычисляют частоту дискретизации(Найквиста). Проблема
+в том, что в теореме рассматривается идеальный ФНЧ, коих в реальном мире не
+бывает. Приведу цитату из того же конспекта лекций:</p>
+
+<p class="MsoNormal" style="text-align:justify">«<i>Для надежного подавления
+спектральных составляющих выше частоты Найквиста антиэлайзинговый ФНЧ должен
+иметь частоту среза несколько ниже частоты Найквиста и очень сильно (не меньше
+90 дБ) подавлять оставляющие спектра сигнала на этой частоте. Обычно это
+эллиптические фильтры 7…9 порядков. Высокая крутизна среза ФНЧ приводит к
+специфическим искажениям в виде «звона». Это связано с тем, что отклик на
+импульсное воздействие &nbsp;такого фильтра описывается осциллирующей функцией вида
+sinс(v ). Чем выше крутизна среза ФНЧ, тем медленнее происходит затухание
+звуковых колебаний. Единственным способом борьбы с этими искажениями является повышение
+частоты выборок, Это позволяет уменьшить крутизну спада антиэлайзингового ФНЧ
+без уменьшения &nbsp;эффективности подавления спектральных составляющих выше частоты
+Найквиста.</i>»</p>
+
+<p class="MsoNormal" style="text-align:justify"><b>Вологдин Э.И. «Стандарты и
+системы цифровой звукозаписи»</b></p>
+
+<p class="MsoNormal" style="text-align:justify"><b>&nbsp;</b></p>
+
+<p class="MsoNormal" style="text-align:justify">Далее нужно рассмотреть ещё один
+интересный момент, в теореме Котельникова приводится бесконечный по времени сигнал,
+что противоречит условиям записи на носитель или в файл:</p>
+
+<p class="MsoNormal" style="text-align:justify"><i>«Теорема Котельникова дает
+предельные соотношения для идеализированных условий, среди которых следует
+отметить ограниченность спектра по частоте и бесконечное время наблюдения. Все
+реальные сигналы конечны во времени и имеют неограниченный по частоте спектр.
+Использование модели с ограниченным спектром и конечное время наблюдения
+приводят к погрешности при восстановлении непрерывного сигнала.»</i></p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;«<i>Расчеты показывают, что на
+практике частота F<sub>Д</sub> существенно превышает частоту дискретизации по
+Котельникову.</i>» Где F<sub>Д</sub> - это частота дискретизации. </p>
+
+<p class="MsoNormal" style="text-align:justify"><b><a href="http://www.lib.unn.ru/students/src/diskretiz.pdf">Ястребов И.П. «ДИСКРЕТИЗАЦИЯ
+НЕПРЕРЫВНЫХ СИГНАЛОВ ВО ВРЕМЕНИ. ТЕОРЕМА КОТЕЛЬНИКОВА» Электронное
+учебно-методическое пособие</a></b> </p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify">Ну и чтобы иметь представление о
+масштабе проблемы, приведу ещё одну цитату:</p>
+
+<p class="Default" style="text-align:justify"><i><span style="font-size:15.0pt;
+font-family:&quot;Calibri&quot;,sans-serif;color:windowtext">«Искажения, вызванные
+ошибками квантования, уверенно заметны на слух уже при 8-разрядном кодировании,
+хотя при этом величина искажений не превышает 0,5%. Это значит, что при 16-ти
+разрядном кодировании, используемом при записи CD, реальный динамический
+диапазон цифрового звука не превышает 48 дБ, а не 96 дБ, как это пишется в
+рекламе».</span></i></p>
+
+<p class="Default" style="text-align:justify"><b><span style="font-size:15.0pt;
+font-family:&quot;Calibri&quot;,sans-serif;"><a href="http://window.edu.ru/resource/043/77043/files/digital-record.pdf">Вологдин Э.И. «ЦИФРОВАЯ ЗВУКОЗАПИСЬ»</a></b></p>
+
+<p class="MsoNormal" style="text-align:justify"><b>&nbsp;</b></p>
+
+<p class="MsoNormal" style="text-align:justify"><b>Выводы</b></p>
+
+<p class="MsoNormal" style="text-align:justify">Теорема Котельникова, хотя
+математически верна, но для практического её применения требуется существенная
+коррекция. И частоту Найквиста(дискретизации) скорей можно обозначить как
+минимально допустимую, для восстановления приблизительной формы волны, но никак
+не для восстановления сигнала «с любой точностью». Для компенсации потерь при
+оцифровке и воспроизведении, частота дискретизации должна быть не в два, а как
+минимум в несколько раз выше верхней граничной частоты.</p>
+
+<p class="MsoNormal" style="text-align:justify">На этом теорему Котельникова
+оставим в покое и перейдём к изучению влияния различных шумов, при записи,
+сведении и воспроизведении звукового сигнала.</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b><span style="font-size:14.0pt;
+line-height:115%">Шумы</span></b></p>
+
+<p class="MsoNormal" style="text-align:justify">Существует множество видов шумов
+влияющих на запись, приведу основные:&nbsp; шум квантования, шум округления,
+дрожание апертуры, нелинейные искажения, аналоговый шум. По <a href="https://www.compel.ru/lib/72951">ссылке</a> приведено
+описание и формулы для расчёта 
+по ним можно примерно понять, сколько искажений внесёт отдельный вид шумов в
+оцифрованный сигнал.</p>
+
+<p class="MsoNormal" style="text-align:justify">Кстати, не стоит воспринимать
+термин «шум» как проявление именно, знакомого всем, «белого шума», разные виды
+шумов воспринимаются по-разному, в данном контексте термин «шум» скорее нужно
+понимать как потерю части полезного сигнала.</p>
+
+<p class="MsoNormal" style="text-align:justify">Примерно рассчитать отдельный вид
+шума ещё можно, но общий уровень шумов при оцифровке вряд ли, получится очень
+сложная математическая модель с множеством допущений. Попробуем пойти от
+обратного, и проанализировать динамический диапазон записанного сигнала на
+АЦП(аналго-цифровом преобразователе) и сравнить его с теоретически возможным.</p>
+
+<p class="MsoNormal" style="text-align:justify">Уровень шума обычно рассчитывают
+по отношению к шагу квантования(1 разряд) или к динамическому диапазону
+звукового сигнала. Динамический диапазон измеряется в децибелах а рассчитать
+его можно&nbsp; по формуле: <b><span style="font-size:12.0pt;line-height:
+115%" lang="EN-US">DR</span></b><b><span style="font-size:12.0pt;line-height:115%">=20</span></b><b><span style="font-size:12.0pt;line-height:115%" lang="EN-US">lg</span></b><b><span style="font-size:12.0pt;line-height:115%">(2</span></b><b><sup><span style="font-size:12.0pt;line-height:115%" lang="EN-US">N</span></sup></b><b><span style="font-size:12.0pt;line-height:115%">) </span></b>,<b><span style="font-size:12.0pt;line-height:115%"> </span></b>где <span lang="EN-US">N</span>
+– разрядность&nbsp; квантования. Получается для 16 бит возможный ДД(Динамический
+диапазон) около 96 дБ., а для 24 бит около 144дБ.</p>
+
+<p class="MsoNormal" style="text-align:justify">Далее возьму результаты
+тестирования АЦП «Lynx Studio Hilo TB»  <a href="https://prosound.ixbt.com/interfaces/lynx-studio-hilo.shtml">отсюда</a>
+, как указано - это «студийный АЦП ЦАП высшей ценовой категории». В ходе
+тестирования АЦП, он показал следующие результаты: </p>
+
+<table class="MsoNormalTable" style="width:80%;background:white;border-collapse:collapse;border:none" width="0" cellspacing="0" cellpadding="0" border="1">
+ <tbody><tr>
+  <td style="border:none;border-top:solid #CCCCCC 1.0pt;background:
+  #F0F0F0;padding:0cm 6.0pt 0cm 6.0pt" valign="top">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;line-height:17.15pt"><span style="font-size:7.0pt;font-family:&quot;PT Serif&quot;,serif;
+  color:#333333">Режим работы</span></p>
+  </td>
+  <td colspan="2" style="border:none;border-top:solid #CCCCCC 1.0pt;
+  background:#F0F0F0;padding:0cm 6.0pt 0cm 6.0pt" valign="top">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;line-height:17.15pt"><span style="font-size:7.0pt;font-family:&quot;PT Serif&quot;,serif;
+  color:#333333">24-bit, 44 kHz</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top:solid #CCCCCC 1.0pt;border-left:none;
+  border-bottom:solid #CCCCCC 1.0pt;border-right:none;background:#EAEAEA;
+  padding:0cm 6.0pt 0cm 6.0pt" valign="top">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;line-height:17.15pt"><span style="font-size:7.0pt;font-family:&quot;PT Serif&quot;,serif;
+  color:#333333">Динамические диапазон, дБ (А)</span></p>
+  </td>
+  <td style="border-top:solid #CCCCCC 1.0pt;border-left:none;
+  border-bottom:solid #CCCCCC 1.0pt;border-right:none;background:#EAEAEA;
+  padding:0cm 6.0pt 0cm 6.0pt" valign="top">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;line-height:17.15pt"><span style="font-size:7.0pt;font-family:&quot;PT Serif&quot;,serif;
+  color:#333333">119.3</span></p>
+  </td>
+  <td style="border-top:solid #CCCCCC 1.0pt;border-left:none;
+  border-bottom:solid #CCCCCC 1.0pt;border-right:none;background:#EAEAEA;
+  padding:0cm 6.0pt 0cm 6.0pt" valign="top">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;line-height:17.15pt"><span style="font-size:7.0pt;font-family:&quot;PT Serif&quot;,serif;
+  color:#333333">Отлично</span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify">Без усиления</p>
+
+<table class="MsoNormalTable" style="width:80%;background:white;border-collapse:collapse;border:none" width="0" cellspacing="0" cellpadding="0" border="1">
+ <tbody><tr>
+  <td style="border:none;border-top:solid #CCCCCC 1.0pt;background:
+  #F0F0F0;padding:0cm 6.0pt 0cm 6.0pt" valign="top">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;line-height:17.15pt"><span style="font-size:7.0pt;font-family:&quot;PT Serif&quot;,serif;
+  color:#333333">Режим работы</span></p>
+  </td>
+  <td colspan="2" style="border:none;border-top:solid #CCCCCC 1.0pt;
+  background:#F0F0F0;padding:0cm 6.0pt 0cm 6.0pt" valign="top">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;line-height:17.15pt"><span style="font-size:7.0pt;font-family:&quot;PT Serif&quot;,serif;
+  color:#333333">24-bit, 44 kHz</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top:solid #CCCCCC 1.0pt;border-left:none;
+  border-bottom:solid #CCCCCC 1.0pt;border-right:none;background:#EAEAEA;
+  padding:0cm 6.0pt 0cm 6.0pt" valign="top">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;line-height:17.15pt"><span style="font-size:7.0pt;font-family:&quot;PT Serif&quot;,serif;
+  color:#333333">Динамические диапазон, дБ (А)</span></p>
+  </td>
+  <td style="border-top:solid #CCCCCC 1.0pt;border-left:none;
+  border-bottom:solid #CCCCCC 1.0pt;border-right:none;background:#EAEAEA;
+  padding:0cm 6.0pt 0cm 6.0pt" valign="top">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;line-height:17.15pt"><span style="font-size:7.0pt;font-family:&quot;PT Serif&quot;,serif;
+  color:#333333">112.6</span></p>
+  </td>
+  <td style="border-top:solid #CCCCCC 1.0pt;border-left:none;
+  border-bottom:solid #CCCCCC 1.0pt;border-right:none;background:#EAEAEA;
+  padding:0cm 6.0pt 0cm 6.0pt" valign="top">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;line-height:17.15pt"><span style="font-size:7.0pt;font-family:&quot;PT Serif&quot;,serif;
+  color:#333333">Отлично</span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify">Забегая вперёд скажу, что в
+тестируемом АЦП используются технологии Дитеринг(Dithering), Нойз-шейпинг(<span lang="EN-US">N</span>oise shaping), а также Децимация, что позволяет расширить
+динамический диапазон и снизить уровень шума, про эти технологии подробнее
+будет рассказано в следующей главе.</p>
+
+<p class="MsoNormal" style="text-align:justify">А теперь прикинем: 24 бит
+равняется 144 дБ. – это возможный динамический диапазон. От 144 дБ. отнимем
+реальный динамический диапазон 119 дБ., потери от шумов составляют 25 дБ. и это
+в лучшем случае, а в худшем 32 дБ. К сожалению, при 16 бит его не тестировали,
+но в соотношении результаты должны быть ещё хуже, т.к. понижение разрядности
+неминуемо приводит к росту шумов. Получается примерно 1/5 часть сигнала просто
+теряется из-за шума.</p>
+
+<p class="MsoNormal" style="text-align:justify">Вот такая складывается, далеко не
+радужная картина, а если копнуть ещё глубже и учесть, как происходит процесс
+сведения на студии звукозаписи, становится не по себе. Как правило, сводят
+готовое произведение из семплов, в которых уже и так присутствуют указанные
+шумы, т.к. семплы записаны на подобном АЦП. Добавляют различные эффекты,
+которые как минимум приводят к передискретизации(resampling) и связанных с ней
+ошибкам округления. А ещё плохие звукорежиссёры очень любят всё пожать и
+выровнять, для этого используются лимитеры и компрессоры, принцип работы
+которых основан на уменьшении динамического диапазона. И через такое проходит
+практически каждый семпл. Даже используя простой эквалайзер, сигнал проходит
+через цифровой фильтр, который вносит шум округления минимум в 0.5 шага
+квантования. Далее при конечном сведении все семплы собираются в один поток,
+соответственно шумы каждого добавляются к шумам ещё одной передискретизации. Но
+и это не всё, при воспроизведении ещё и ЦАП добавляет собственные шумы и шум
+округления. Теперь представляете, что на самом деле остаётся от полезного
+сигнала!</p>
+
+<p class="MsoNormal" style="text-align:justify">Для исправления такого положения
+вещей стали применяться различные технологии борьбы с шумами, основными из них
+стали Oversampling, Dithering и <span lang="EN-US">N</span>oise shaping.</p>
+
+<br>
+
+<p class="MsoNormal" style="text-align:justify"><b><span style="font-size:14.0pt;
+line-height:115%">Методы борьбы с шумами</span></b></p>
+
+<p class="MsoNormal" style="text-align:justify"><b><span style="font-size:14.0pt;
+line-height:115%">&nbsp;</span></b></p>
+
+<p class="MsoNormal" style="text-align:justify"><b>Oversampling</b></p>
+
+<p class="MsoNormal" style="text-align:justify">Для компенсации потерь вызванные
+шумами, ещё во времена мультибитных ЦАПов, стали применять технологию Oversampling.
+Принцип работы Oversampling заключается в следующем - к уже существующим
+дискретным отчётам добавляются промежуточные, которые повторяют приблизительную
+форму волны. Промежуточные отсчёты либо рассчитываются с применением математической
+интерполяции, либо заполняются нулевыми значениями, и передаются на цифровой
+фильтр, который в свою очередь перезаписывает нули в соответствии со своим
+алгоритмом. Обычно и тот, и другой подход называют интерполяцией, а цифровой
+фильтр называют интерполирующим. Самым простым способом интерполяции является
+линейная интерполяция. А самым простым цифровым фильтром, может выступать
+фильтр нижних частот.</p>
+
+<p class="MsoNormal" style="text-align:justify"><img src="assets/img/image013.png" width="528" hspace="12" height="443" align="left"><i>Иллюстрация
+алгоритма <b>интерполяции</b> дискретного сигнала (с коэффициентом 2). Красные
+точки обозначают исходные отсчеты сигнала, сплошные линии — непрерывный сигнал,
+представлением которого эти отсчеты являются. Сверху — исходный сигнал. В
+середине — этот же сигнал со вставленными нулевыми отсчётами (зеленые точки).
+Снизу — интерполированный сигнал (синие точки — интерполированные значения
+отсчётов)</i>.</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify">Сначала стали применять только
+передискретизацию с повышением частоты например с 44,1 до 176,4 кГц., позднее
+применяли уже передискретизацию с повышением частоты дискретизации и
+увеличением разрядности квантования - этот процесс называется реквантование.</p>
+
+<p class="MsoNormal" style="text-align:justify">Хотя Oversampling вносит шум
+округления, но при его использовании, за счёт расширения динамического диапазона
+сигнала снижается общая плотность шума, и последующая обработка сигнала окажет
+уже меньшее влияние. Каждое удвоение частоты дискретизации расширяет
+динамический диапазон примерно на 1 шаг квантования(6 дБ.), минус шум
+округления.</p>
+
+<p class="MsoNormal" style="text-align:justify">Как раз для возможности применить
+Oversampling стали выпускать микросхемы мультибитных ЦАПов поддерживающие на входе
+цифровой поток до 192х24, а также появились аппаратные апсемплеры, на основе <span lang="EN-US">DSP</span> - digital signal processor.</p>
+
+<p class="MsoNormal" style="text-align:justify">Применение технологии Oversampling
+конечно давало улучшение характеристик звукового сигнала, но кардинально
+ситуацию не меняло, уровень шума всё равно оставался довольно высок, поэтому
+стали применяться и другие технологии.</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b>Децимация</b></p>
+
+<p class="MsoNormal" style="text-align:justify">Для записи и сведения звукового
+сигнала начали использовать децимацию - это обратный процесс, передискретизация
+с понижением частоты дискретизации и разрядности квантования. Записывался
+сигнал с высокой частотой дискретизации и разрядностью квантования, например
+176.4 или 192 кГц. с разрядностью 24 бит, и при помощи удаления части отсчётов цифровым
+фильтром, «сжимался» до стандарта <span lang="EN-US">CDDA</span><span lang="EN-US">
+</span>- 44.1 кГц. 16 бит. Этот подход позволяет немного снизить уровень шума
+квантования.</p>
+
+<p class="MsoNormal" style="text-align:justify"><img src="assets/img/image014.png" width="518" hspace="12" height="485" align="left"></p>
+
+<p class="MsoNormal" style="text-align:justify"><i>Иллюстрация алгоритма <b>децимации</b>
+дискретного сигнала (с коэффициентом 2). Красные точки обозначают отсчеты,
+сплошные линии — непрерывный сигнал, представлением которого эти отсчеты
+являются. Сверху — исходный сигнал. В середине — этот же сигнал после фильтрации
+в цифровом фильтре нижних частот. Снизу — децимированный сигнал</i>.</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;Позднее для более серьёзной
+борьбы с шумами стали применять Дитеринг(Dithering) и Нойз-шейпинг(<span lang="EN-US">N</span>oise shaping)</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b>Dithering</b></p>
+
+<p class="MsoNormal" style="text-align:justify">Dithering – метод подмешивания псевдослучайного
+шума при оцифровке или воспроизведении звукового сигнала. Эта технология
+выполняет две задачи: </p>
+
+<ol style="margin-top:0cm" type="1" start="1">
+ <li class="MsoNormal" style="text-align:justify">Линеаризация передаточной
+     функции квантователя\реквантователя.</li>
+ <li class="MsoNormal" style="text-align:justify">Декорреляция ошибок
+     квантования.</li>
+</ol>
+
+<p class="MsoNormal" style="text-align:justify">Шумы квантования имеют корреляцию(взаимосвязь)
+с основным сигналом, что создаёт паразитные гармоники, которые повторяют форму
+сигнала, оказывая влияние на восприятие, создавая ощущение как бы «нечёткости»
+звучания. Добавляя специально смоделированный шум в основной сигнал можно
+убрать корреляцию, тем самым превратив коррелированный шум квантования в
+обычный белый шум. Это немного поднимает общий шумовой уровень, но положительно
+сказывается на восприятии. Визуально этот процесс проиллюстрирован в <a href="https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%B7%D0%B5%D1%80%D0%B8%D0%BD%D0%B3">Википедии</a>:</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;<img src="assets/img/image015.png" alt="Dithering_example_undithered_web_palette" width="250" height="200" border="0"> До &nbsp;<img id="Рисунок 23" src="assets/img/image016.png" alt="Dithering_example_dithered_web_palette" width="250" height="200" border="0"> После </p>
+
+<p class="MsoNormal" style="text-align:justify"></p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b><span lang="EN-US">Noise</span><span lang="EN-US"> </span></b><b><span lang="EN-US">shaping</span></b></p>
+
+<p class="MsoNormal" style="text-align:justify">Технология <span lang="EN-US">Noise</span><span lang="EN-US"> </span><span lang="EN-US">shaping</span> позволяет значительно
+уменьшить шум, вносимый при: квантовании, реквантовании и дитеринге.</p>
+
+<p class="MsoNormal" style="text-align:justify">Суть этой технологии заключается
+в следующем: квантованный сигнал на входе сравнивается с сигналом на выходе реквантователя
+формируя разницу(ошибку), которая вычитается из основного сигнала, компенсируя
+тем самым искажения, внесённые реквантователем и в процессе дитеринга.
+Образуется так называемая обратная связь, которая стремится компенсировать
+разницу(ошибку) на входе и выходе реквантователя, подобно отрицательной
+обратной связи на операционном усилителе, только все преобразования происходят
+в цифровом виде.</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b><img id="Рисунок 24" src="assets/img/image017.png" width="455" height="277" border="0"></b></p>
+
+<p class="MsoNormal" style="text-align:justify">Приведена схема реквантователя
+первого порядка, но, как правило, используются реквантователи вплоть до 9…12
+порядка.</p>
+
+<p class="MsoNormal" style="text-align:justify">У этой технологии есть и минусы,
+применение <span lang="EN-US">N</span>oise shaping вносит большое количество
+шумов в область высоких частот, поэтому применение ФНЧ(фильтра низких частот),
+с частотой среза близкой к верхней граничной частоте, становится обязательным
+условием.</p>
+
+<p class="MsoNormal" style="text-align:justify">Технология <span lang="EN-US">N</span>oise
+shaping может использоваться и без Dithering, но результат совместного
+применения, на слух, будет заметно лучше.</p>
+
+<p class="MsoNormal" style="text-align:justify"><i>«В практическом приложении
+технология NS всегда осуществляется одновременно</i></p>
+
+<p class="MsoNormal" style="text-align:justify"><i>с технологией Dithering,
+поэтому все преимущества последней, описанные выше,</i></p>
+
+<p class="MsoNormal" style="text-align:justify"><i>естественно сохраняются. Новым
+является добавление фильтра верхних частот. Это</i></p>
+
+<p class="MsoNormal" style="text-align:justify"><i>позволяет понизить
+спектральную плотность мощности шума реквантования в</i></p>
+
+<p class="MsoNormal" style="text-align:justify"><i>диапазоне от 0 до 14…16 кГц,
+за счет резкого увеличения мощности шума</i></p>
+
+<p class="MsoNormal" style="text-align:justify"><i>реквантования на более высоких
+частотах, до частоты Найквиста.»</i></p>
+
+<p class="MsoNormal" style="text-align:justify"><b>Вологдин Э.И. «АНАЛОГО-ЦИФРОВОЕ
+ПРЕОБРАЗОВАНИЕ АУДИО СИГНАЛОВ»</b></p>
+
+<p class="MsoNormal" style="text-align:justify"><b>&nbsp;</b></p>
+
+<p class="MsoNormal" style="text-align:justify">Последнюю технологию которую
+хотелось бы рассмотреть это <span lang="EN-US">DEM</span>.</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b><span lang="EN-US">Dynamic</span><span lang="EN-US"> </span></b><b><span lang="EN-US">Element</span><span lang="EN-US"> </span></b><b><span lang="EN-US">Matching</span></b></p>
+
+<p class="MsoNormal" style="text-align:justify"><span style="font-size:15.5pt;line-height:115%" lang="EN-US">Dynamic</span><span style="font-size:15.5pt;line-height:115%" lang="EN-US"> </span><span style="font-size:15.5pt;line-height:115%" lang="EN-US">Element</span><span style="font-size:15.5pt;line-height:115%" lang="EN-US"> </span><span style="font-size:15.5pt;line-height:115%" lang="EN-US">Matching</span><span style="font-size:15.5pt;line-height:115%" lang="EN-US"> </span><span style="font-size:15.5pt;
+line-height:115%">или сокращенно </span><span style="font-size:15.5pt;
+line-height:115%" lang="EN-US">DEM</span><span style="font-size:15.5pt;line-height:115%"> - это
+технология, которая формирует на выходе ЦАП несколько уровней сигнала. Она
+похожа на нечто среднее между однобитным и мультибитным ЦАПом, служит она для
+снижения детерминированных ошибок при использовании сигма-дельта модуляции(</span><span style="font-size:15.5pt;line-height:115%" lang="EN-US">SDM</span><span style="font-size:15.5pt;line-height:115%">). Эти ошибки, подобно шумам
+квантования, сильно коррелированны с сигналом на выходе однобитного модулятора,
+поэтому значительно влияют на восприятие звукового сигнала. </span></p>
+
+<p class="MsoNormal" style="text-align:justify"><span style="font-size:15.5pt;
+line-height:115%">А также, эта технология снижает требования к аналоговому
+фильтру, т.к. форма сигнала ещё до фильтрации приближается к форме воспроизводимой
+волны. Технология </span><span style="font-size:15.5pt;line-height:
+115%" lang="EN-US">DEM</span><span style="font-size:15.5pt;line-height:115%"> реализуется
+при помощи нескольких выводов, соединенных в общую шину, которые формируют
+выходной сигнал ЦАП.</span></p>
+
+<p class="MsoNormal" style="text-align:justify"><span style="color:#C00000"><img src="assets/img/image018.png" width="767" height="260" border="0"></span></p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify">В этой главе рассмотрены только
+основные виды технологий, применяемых при воспроизведении, кроме этого конечно могут
+применяться и другие, а также различные их сочетания и вариации. Особенно
+производители любят экспериментировать с цифровой фильтрацией и модуляторами,
+изобретая всё новые и новые цифровые фильтры, которые могут оказывать
+значительное влияние на сигнал, как в лучшую, так и в худшую сторону. Алгоритмы
+обработки цифрового сигнала современных ЦАП, как правило, довольно сложны и
+включают всё вышеперечисленное, а так же собственные наработки производителей. Разумеется,
+производители не публикуют алгоритмы фильтров и модуляторов, хорошо, если будет
+указана примерная блок схема, поэтому остаётся только предполагать, что на
+самом деле происходит со звуковым сигналом внутри того или иного
+цифро-аналогового преобразователя.</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b><span style="font-size:14.0pt;
+line-height:115%">Сигма-дельта преобразователи</span></b></p>
+
+<p class="MsoNormal" style="text-align:justify">Вот мы и приблизились к апогею
+теоретической части, почти всё, о чём рассказывалось ранее, сходится в этой
+точке.</p>
+
+<p class="MsoNormal" style="text-align:justify">Сигма-дельта цифро-аналоговые
+преобразователи развивались параллельно мультибитным ЦАП, по совершенно иному
+пути. За основу была взята, как понятно из названия, сигма-дельта модуляция, в
+литературе обычно обозначается аббревиатурой <span lang="EN-US"></span><span lang="EN-US"> </span><a href="https://ru.wikipedia.org/wiki/%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0-%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8F%D1%86%D0%B8%D1%8F">SDM</a>.
+В сигма-дельта модуляции передаётся не абсолютное значение амплитуды сигнала за
+единицу времени, как в мультибитных ЦАП, а изменения сигнала относительно
+предыдущего значения, если амплитуда возрастает, передаётся 1, если падает 0.
+Подобный принцип уже был описан в разделе про <span lang="EN-US">DSD</span>. </p>
+
+<p class="MsoNormal" style="text-align:justify"><img id="Рисунок 2" src="assets/img/image019.png" alt="1280px-Delta_PWM-ru" width="634" height="407" border="0"></p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify">Первые сигма-дельта ЦАПы были полностью
+однобитными, но за счёт высокой частоты дискретизации обеспечивали динамический
+диапазон на уровне примерно 129 дБ. За основу была взята частота дискретизации
+44.1 кГц. вероятно для упрощения вычислений при интерполяции, тем самым экономя
+аппаратные ресурсы. Сначала использовали частоту 2.8 МГц., это 44,1 кГц.
+увеличенная в 64 раза. Сейчас же частота может быть различна и определяется
+внутренней архитектурой самого ЦАП, обычно основана она на частотных сетках
+кратных 44.1 кГц. и 48 кГц. с множителем 64, 128, 256, 512, 1024 . Со временем
+дельта-сигма ЦАП практически полностью вытеснили мультибитные, по вполне
+простым причинам - чисто экономическим. Во первых, требования к качеству и
+точности компонентов гораздо ниже чем у мультибитных ЦАП, соответственно и
+себестоимость ниже. А во вторых, в те времена(80е-90е гг.), стоимость
+реализации интерполяции и <span lang="EN-US">N</span>oise shaping для однобитного
+модулятора была существенно меньше, чем для 16 бит. Сейчас, с развитием
+технологий, это не так критично и многие сигма-дельта ЦАПы имеют, подобно
+мультибитам, несколько уровней на выходе. Но за счёт многократного увеличения
+частоты требования к компонентам остаются не очень высокими, таким образом,
+первое преимущество сохраняется и по сей день.</p>
+
+<p class="MsoNormal" style="text-align:justify">Современные сигма-дельта ЦАП
+имеют довольно сложную структуру и включают в себя практически все технологии, перечисленные
+в предыдущей главе. Приведу пример внутренней структуры одного из простых
+сигма-дельта ЦАП, описанного в конспекте лекций.<span style="color:#C00000"> </span></p>
+
+<p class="MsoNormal" style="text-align:justify"><span style="color:#C00000"><img id="Рисунок 3" src="assets/img/image020.png" width="767" height="114" border="0"></span></p>
+
+<p class="MsoNormal" style="text-align:justify">«<i>Входные цифровые 16-ти
+разрядные выборки с частотой дискретизации 44.1 кГц подаются на вход цифрового
+фильтра передискретизации. В схеме используется нерекурсивный с 4-кратной
+передискретизацией FIR (finite impulse response) интерполя-ционный фильтр с
+линейной фазовой характеристикой. На первом этапе модуляции в ре-зультате
+переквантования число разрядов в выборках понижается с 16 до 14 и использует-ся
+SDM 1 порядка. Затем еще раз производится передискретизация c помощью двух
+ступеней (Kos =32 и 2). Между этими ступенями в тракт вводится шумовой сигнал,
+осуществляющий опера-цию «Dithering» с уровнем шума равны минус 20 дБ. Она
+уменьшает нелинейность пере-даточной функции из-за ошибок квантования. Общий
+коэффициент передискретизации равен 256 и частота дискретизации увеличивается
+до 11,29 МГц. Во второй ступени модуляции используется SDM 2 порядка и формируется
+1-разрядный цифровой поток. К выходу ЦАПа подключается время-импульсный
+цифровой модулятор, преобразующий цифровые данные в последовательность
+импульсов, модули-рованных по плотности (PDM).</i>»</p>
+
+<p class="MsoNormal" style="text-align:justify"><b>Вологдин Э.И. «АНАЛОГО-ЦИФРОВОЕ
+ПРЕОБРАЗОВАНИЕ АУДИО СИГНАЛОВ»</b></p>
+
+<p class="MsoNormal" style="text-align:justify"><b>&nbsp;</b></p>
+
+<p class="MsoNormal" style="text-align:justify">Если обобщить и упростить
+происходит примерно следующее:</p>
+
+<p class="MsoNormal" style="text-align:justify">На вход ЦАП подаётся ИКМ(<span lang="EN-US">PCM</span>) поток через разъём <span lang="EN-US">I</span>2<span lang="EN-US">S</span>, подвергается интерполяции(<b><span lang="EN-US">Oversampling</span></b>),
+далее добавляется шум(<b><span lang="EN-US">Dithering</span></b>), подаётся на реквантователь
+с обратной связью(<b><span lang="EN-US">Noise</span><span lang="EN-US"> </span></b><b><span lang="EN-US">shaping</span></b>), в конце формируется однобитный поток, он проходит
+через аналоговый фильтр нижних частот, где уже и получается конечный звуковой
+сигнал, который мы слышим.</p>
+
+<p class="MsoNormal" style="text-align:justify">Многоразрядный цап устроен
+сложнее, кроме выше перечисленного в нём используется ещё и технология <span lang="EN-US">DEM</span>.</p>
+
+<p class="MsoNormal" style="text-align:justify"><img src="assets/img/image021.png" width="768" height="174" border="0"></p>
+
+<p class="MsoNormal" style="text-align:justify">Конечно, это далеко не всё что
+нужно бы рассказать про сигма-дельта цифро-аналоговые преобразователи, но для
+общего понимания пока думаю, хватит. Как обычно, для любителей разобраться в
+деталях приложу несколько ссылок, там рассказано не только про <a href="http://microsin.net/programming/dsp/delta-sigma-modulation.html">сигма-дельта
+ЦАП</a>, но и про <a href="http://window.edu.ru/resource/052/79052/files/%D0%A1%D0%B8%D0%B3%D0%BC%D0%B0%20%D0%B4%D0%B5%D0%BB%D1%8C%D1%82%D0%B0%20%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8F%D1%86%D0%B8%D1%8F%20%D0%B2%20%D0%B0%D1%83%D0%B4%D0%B8%D0%BE%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B5.pdf">сигма-дельта АЦП</a>.</p>
+
+<p class="MsoNormal" style="text-align:justify">
+
+<p class="MsoNormal" style="text-align:justify"></p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify">Современные цифро-аналоговые преобразователи
+являются довольно сложными устройствами, но, по сути, применение этих
+технологий необходимо только для искусственного расширения динамического
+диапазона, и по большому счёту используется для преодоления ограничений
+форматов <span lang="EN-US">CDDA</span><span lang="EN-US"> </span>и <span lang="EN-US">MP</span>3. Применение этих технологий, можно сказать, навязано,
+благодаря слепому следованию теореме Котельникова! Но есть и другой путь. Если
+бы изначально выпускали записи в высоком разрешении ИКМ(192х24), а ещё лучше в
+формате <span lang="EN-US">DSD</span>, тогда не требовалось бы применение такого
+количества технологий и сложных цифровых преобразований. В случае с <span lang="EN-US">DSD</span><span lang="EN-US"> </span>возможно совсем не нужно было бы
+вмешательство в квантованный сигнал, по крайней мере, при воспроизведении.
+Позднее из практической части будет более понятно почему.</p>
+
+<p class="MsoNormal" style="text-align:justify">На этом с теоретической частью,
+пожалуй, пора заканчивать.</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b><span style="font-size:14.0pt;
+line-height:115%">Заключение</span></b></p>
+
+<p class="MsoNormal" style="text-align:justify">Как видите, путь развития
+звукозаписи и воспроизведения в цифровую эпоху был весьма непрост, с
+изобретением компакт дисков, буквально за пару десятков лет, звук практически
+прекратил своё существование на аналоговых носителях. Хорошо это или плохо
+каждый решает для себя, но хотелось бы, чтобы оставалась сама возможность
+выбора! Если уж не между цифрой и аналогом, то хотя бы, как и в каком качестве
+слушать любимую музыку. К сожалению сейчас этого выбора нет! В данный момент большая
+редкость, что кто-нибудь, кроме энтузиастов на трекерах, выпускает музыку в
+высоком разрешении. Больше всего претензий к студиям звукозаписи, они решили за
+всех, что будет только <span lang="EN-US">CDDA</span><span lang="EN-US"> </span>и
+всё. Остается посочувствовать музыкантам, сколько они тратят сил и времени на
+создание музыки, а их труды даже не хотят сохранить должным образом. Такое
+наплевательское отношение уже граничит с халатностью. Выходом из этой ситуации
+могла бы стать запись на мастер-ленту или хотя бы в <span lang="EN-US">DSD</span>,
+но студийным боссам видимо «плевать», ибо «пипл хавает» и так.</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b><span style="font-size:16.0pt;
+line-height:115%">Практика</span></b></p>
+
+<p class="MsoNormal" style="text-align:justify">Эта статья написана с таким
+расчётом, чтобы не собирать знания по кусочкам с разных ресурсов, а руководствуясь
+только ей можно было собрать свой первый, а может уже и не первый,
+цифро-аналоговый преобразователь. Составить, так сказать, достаточно полное
+руководство по сборке.</p>
+
+<p class="MsoNormal" style="text-align:justify">В практическом разделе будет
+представлено несколько концептов, как классических, так и довольно радикальных,
+выбирайте сами, что вам по душе. Для тех, кто захочет повторить эксперименты, прошу
+обратить внимание на предупреждение:</p>
+
+<p class="MsoNormal" style="text-align:justify"><b><span lang="EN-US">D</span>isclaimer</b></p>
+
+<p class="MsoNormal" style="text-align:justify"><b>Весь материал изложенный ниже
+дается как есть, без каких-либо гарантий! Автор не несёт ответственность за
+ваши действия, всё, что вы делаете – делаете на свой страх и риск!</b></p>
+
+<p class="MsoNormal" style="text-align:justify"><b>Хотя все схемы проверялись на
+практике, они намеренно упрощены и представляют из себя пример для объяснения
+принципа работы, а не конструктивно-законченное изделие!</b></p>
+
+<p class="MsoNormal" style="text-align:justify">Объективно написать, как
+«правильно» следует собирать цифро-аналоговые преобразователи нет возможности,
+за отсутствием общей парадигмы. Существуют только наборы: подходов, методов,
+школ и философий – что по сути является набором стереотипов. Поэтому, всё
+изложенное ниже будет пересказ моего личного опыта, с моими же субъективными оценками
+и выводами. Не имею цели кого-либо в чем-то убеждать, как и что делать решать
+только вам. </p>
+
+<p class="MsoNormal" style="text-align:justify">Да, и давайте сразу договоримся, будут
+рассмотрены только основные моменты, не буду касаться реализации питания, усилителей,
+акустики и т.д., ибо на вкус и цвет … </p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b><span style="font-size:14.0pt;line-height:115%" lang="EN-US">PCM</span></b><b><span style="font-size:14.0pt;line-height:115%" lang="EN-US"> </span></b><b><span style="font-size:14.0pt;line-height:115%" lang="EN-US">DAC</span></b><b><span style="font-size:14.0pt;line-height:115%">(ИКМ ЦАП)</span></b></p>
+
+<p class="MsoNormal" style="text-align:justify">С обычными импульс-кодовыми
+цифро-аналоговыми преобразователями всё достаточно просто: </p>
+
+<p class="MsoNormal" style="text-align:justify">Разделю условно </p>
+
+<ol style="margin-top:0cm" type="1" start="1">
+ <li class="MsoNormal" style="text-align:justify"><b>Источник </b></li>
+ <li class="MsoNormal" style="text-align:justify"><b><span lang="EN-US">I2S </span>преобразователь(конвертер)</b></li>
+ <li class="MsoNormal" style="text-align:justify"><b><span lang="EN-US">I2S</span><span lang="EN-US"> </span>ЦАП</b></li>
+</ol>
+
+<p class="MsoNormal" style="text-align:justify">Вот картинка из теоретической
+части для более удобной навигации:</p>
+
+<p class="MsoNormal" style="text-align:justify"><img id="Рисунок 33" src="assets/img/image022.jpg" width="719" height="365" border="0"></p>
+
+<p class="MsoNormal" style="text-align:justify"><b>&nbsp;</b></p>
+
+<p class="MsoNormal" style="text-align:justify">Начнём по порядку:</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b>Источник</b></p>
+
+<p class="MsoNormal" style="text-align:justify">В качестве источника может
+выступать компьютер, планшет, телефон или какой-нибудь микрокомпьютер вроде <span lang="EN-US">Raspberry</span><span lang="EN-US"> </span><span lang="EN-US">Pi</span>.
+В отдельных случаях источник и конвертер могут быть выполнены в одном
+устройстве, это различные проигрыватели с <span lang="EN-US">I</span>2<span lang="EN-US">S</span><span lang="EN-US"> </span>выходом или микрокомпьютеры, о них
+мы позднее ещё поговорим.</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b><span lang="EN-US">I</span>2</b><b><span lang="EN-US">S</span> преобразователь(конвертер)</b></p>
+
+<p class="MsoNormal" style="text-align:justify">Вариантов <span lang="EN-US">I</span>2<span lang="EN-US">S</span><span lang="EN-US"> </span>преобразователей может быть
+множество. Подключение к источнику может происходить по средством </p>
+
+<ol style="margin-top:0cm" type="1" start="1">
+ <li class="MsoNormal" style="text-align:justify"><b><span lang="EN-US">USB</span></b></li>
+ <li class="MsoNormal" style="text-align:justify"><b><span lang="EN-US">S/PDIF</span></b></li>
+ <li class="MsoNormal" style="text-align:justify"><b><span lang="EN-US">LAN</span></b></li>
+</ol>
+
+<p class="MsoNormal" style="text-align:justify"><b>&nbsp;</b></p>
+
+<p class="MsoNormal" style="text-align:justify">Да, ещё есть вариации с Bluetooth,
+но рассматривать&nbsp; их не будем, т.к. про высокое качество в такой системе и речи
+быть не может. Скорость передачи данных Bluetooth очень мала, про Hi-Res(192<span lang="EN-US">x</span>24, <span lang="EN-US">DSD</span>) можно забыть сразу, но даже
+при прослушивании <span lang="EN-US">mp</span>3(44.1х16), цифровой поток проходит
+через несколько цифровых фильтров, к тому же с обрезкой частоты звукового
+сигнала. Кстати говоря, это же относится и к Bluetooth наушникам. Да ещё дело
+ухудшается тем, что в наушниках, из-за малого размера, сложно разместить
+полноценный ЦАП и питание к нему, поэтому, как правило, используют «урезанные»
+версии. Подробно про передачу звука по Bluetooth можете прочитать в этой 
+<a href="https://habr.com/ru/post/427997">статье</a></p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify">Самый распространённый вариант <span lang="EN-US">I</span>2<span lang="EN-US">S</span> конвертеров это <b><span lang="EN-US">USB</span></b>.</p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><img src="assets/img/image023.jpg" width="510" height="486" border="0"></p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify">Думаю, тут и так всё понятно:
+подключаем к <span lang="EN-US">USB</span> порту источника, устанавливаем
+драйвер, если требуется, и при проигрывании на выходе <span lang="EN-US">I</span>2<span lang="EN-US">S</span> получаем <span lang="EN-US">PCM</span> или <span lang="EN-US">DSD</span><span lang="EN-US"> </span>поток. В операционной системе конвертер определяется как
+звуковое устройство или звуковая карта. Предложений <span lang="EN-US">USB</span>
+- <span lang="EN-US">I</span>2<span lang="EN-US">S</span><span lang="EN-US"> </span>конвертеров
+в интернете огромное количество, достаточно зайти на <span lang="EN-US">A</span>liexpress
+или <span lang="EN-US">Ebay</span> и ввести в поле поиска запрос «usb to i2s» и
+вам выдаст несколько десятков различных вариантов.</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify">Множество коммерческих - проприетарных
+ЦАПов имеют <b><span lang="EN-US">S</span>/</b><b><span lang="EN-US">PDIF</span></b><span lang="EN-US"> </span>разъём для подключения. Не так давно <span lang="EN-US">S</span>/<span lang="EN-US">PDIF</span> был довольно популярен и встречался почти в каждой звуковой
+карте, даже в самых дешёвых, встроенных в материнские платы персональных
+компьютеров. Но не все знают, что почти всегда <span lang="EN-US">S</span>/<span lang="EN-US">PDIF</span> это промежуточное звено, и используется, как правило, в
+роли транспорта.<span style="color:#C00000"> </span>Либо у источника, либо у
+ЦАП, в большинстве случаев, S/PDIF подключен через <span lang="EN-US">I</span>2<span lang="EN-US">S</span>. Другими словами передача сигнала идет не напрямую, а вначале
+конвертируется из <span lang="EN-US">I</span>2<span lang="EN-US">S</span><span lang="EN-US"> </span>в <span lang="EN-US">S</span>/<span lang="EN-US">PDIF</span>, а
+потом обратно. Не берусь сказать сколько именно, но считается, что потери при
+конвертации и передаче имеются. Кроме того, у S/PDIF есть и другие недостатки, это
+скорость передачи и стоимость. Самые дешёвые <span lang="EN-US">DIY</span><span lang="EN-US"> </span>устройства «<span lang="EN-US">USB</span><span lang="EN-US"> </span><span lang="EN-US">to</span><span lang="EN-US"> </span><span lang="EN-US">S</span>/<span lang="EN-US">PDIF</span>» стоят около 4000 руб., а передавать по ним возможно
+максимум <span lang="EN-US">PCM</span> 192<span lang="EN-US">x</span>24 или <span lang="EN-US">DSD</span>64 через <span lang="EN-US">DOP</span>. Таким образом,
+применение S/PDIF, при наличии других вариантов, нецелесообразно.</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify">Теперь рассмотрим подключение <span lang="EN-US">I</span>2<span lang="EN-US">S</span> конвертера по <b><span lang="EN-US">LAN</span></b>(локальной сети), для этого используются специальные программные
+плееры: <span lang="EN-US">S</span>queezelite, <span lang="EN-US">HQPlayer</span>, <span lang="EN-US">Roon</span><span lang="EN-US"> </span>и др. Они устанавливаются на
+основной компьютер, который выступает в роли передатчика(источника), при
+воспроизведении происходит распаковка, декодирование и, если требуется,
+обработка цифрового потока. Далее цифровой аудио поток, через определённый(зависит
+от плеера) сетевой протокол, передаётся на приёмник в качестве которого, почти
+всегда, выступает микрокомпьютер. Далее микрокомпьютер либо сам конвертирует
+полученный поток в <span lang="EN-US">I</span>2<span lang="EN-US">S</span>, либо
+передаёт поток на конвертер подключенный к нему по <span lang="EN-US">USB</span>.
+Есть решения: как <span lang="EN-US">DIY</span><span lang="EN-US"> </span>основанные,
+например, на микрокомпьютерах beaglebone black или <span lang="EN-US">Raspberry</span><span lang="EN-US"> </span><span lang="EN-US">Pi</span>, так и серийные решения различных
+производителей:</p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><img id="Рисунок 6" src="assets/img/image024.jpg" alt="mRenduopen01" width="721" height="479" border="0"></p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify">Часто бывают устройства,
+объединяющие в себе одновременно источник и конвертер, конвертер и ЦАП или всё
+в одном устройстве.</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b><span lang="EN-US">I</span>2</b><b><span lang="EN-US">S</span> ЦАП</b></p>
+
+<p class="MsoNormal" style="text-align:justify">Цифро-аналоговых преобразователей
+с <span lang="EN-US">I</span>2<span lang="EN-US">S</span><span lang="EN-US"> </span>входом
+огромное количество, серийные полностью собранные, рассматривать не будем, это
+не наш путь в контексте данной статьи. Рассмотрим лучше <span lang="EN-US">DIY</span>
+решения. Самый простой и дешёвый способ послушать тот или иной ЦАП – купить
+готовую <span lang="EN-US">DIY</span><span lang="EN-US"> </span>плату с ЦАПом, на
+какой-нибудь торговой площадке. Лучше всего брать без питания и предусиления
+т.к. всё равно придётся переделывать, если конечно знаете как. Для первого раза
+можно взять что-нибудь простенькое и дешёвое, вроде этого:</p>
+
+<p class="MsoNormal" style="text-align:justify"><span lang="EN-US">DYI</span><span lang="EN-US"> </span>плата на чипе PCM5102A от компании Texas Instruments</p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><img id="Рисунок 90" src="assets/img/image025.jpg" alt="123.jpg" width="306" height="236" border="0"></p>
+
+<p class="MsoNormal" style="text-align:justify"><span lang="EN-US">&nbsp;</span></p>
+
+<p class="MsoNormal" style="text-align:justify">А в качестве конвертера, в моём
+случае, будет <span lang="EN-US">Amanero</span> от компании <span lang="EN-US">A</span>manero
+<span lang="EN-US">T</span>echnologies.</p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><img id="Рисунок 130" src="assets/img/image026.jpg" width="581" height="581" border="0"></p>
+
+<p class="MsoNormal" style="text-align:justify"><span lang="EN-US">&nbsp;</span></p>
+
+<p class="MsoNormal" style="text-align:justify">Всё необходимое для PCM5102A меожно
+подать прямо с конвертера: Питание – <span lang="EN-US">VIN</span> соединить с контактом
+3.3<span lang="EN-US">V</span>, землю – <span lang="EN-US">GNG</span><span lang="EN-US"> </span><span lang="EN-US">c</span><span lang="EN-US"> </span>землёй
+конвертера <span lang="EN-US">GND</span>, <span lang="EN-US">LCK</span><span lang="EN-US"> </span><span lang="EN-US">c</span><span lang="EN-US"> </span>контактом <span lang="EN-US">FSCLK</span><span lang="EN-US"> </span>конвертера, <span lang="EN-US">DIN</span><span lang="EN-US"> </span><span lang="EN-US">c</span><span lang="EN-US"> </span><span lang="EN-US">DATA</span>, <span lang="EN-US">BCK</span><span lang="EN-US"> </span><span lang="EN-US">c</span><span lang="EN-US"> </span><span lang="EN-US">BCLK</span>, а вот
+<span lang="EN-US">SCK</span><span lang="EN-US"> </span>и <span lang="EN-US">MCLK</span>
+в данном ЦАПе(PCM5102A) соединять не обязательно, он сможет работать и без
+дополнительной синхронизации. Но для повышения точности, если есть такая
+возможность, <span lang="EN-US">MCLK</span> лучше всё же подключать. Аналогичным
+образом данный ЦАП можно подсоединить и к <span lang="EN-US">Raspberry</span><span lang="EN-US"> </span><span lang="EN-US">Pi</span>.</p>
+
+<p class="MsoNormal" style="text-align:justify"><img id="Рисунок 126" src="assets/img/image027.jpg" width="717" height="171" border="0"></p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal">Как видите ни чего сложного нет, ни какие специальные знания
+не требуются, подобным образом, к <span lang="EN-US">I</span>2<span lang="EN-US">S</span>
+можно подключить и многие другие цифро-аналоговые преобразователи. Для
+воспроизведения через <span lang="EN-US">USB</span><span lang="EN-US"> </span>подойдут
+практически любые плееры, на <span lang="EN-US">Raspberry</span><span lang="EN-US">
+</span><span lang="EN-US">Pi</span><span lang="EN-US"> </span>новичкам можно
+посоветовать <span lang="EN-US">Volumio</span>, а более продвинутым слушателям
+сборку с  <a href="https://www.dastereo.ru/t/distributiv-yoctoap-album-player-upnp-renderer-console-player-roon-lms-bridge-gui/52553">Album Player</a></p>
+
+<p class="MsoNormal" style="text-align:justify">Для начинающих этой информации
+будет более чем достаточно, особенно для первого раза. Для тех же, кто не
+боится трудностей, продолжу повествование, но учтите, далее сложность будет
+возрастать.</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b><span style="font-size:14.0pt;line-height:115%" lang="EN-US">DSD</span></b><b><span style="font-size:14.0pt;line-height:115%" lang="EN-US"> </span></b><b><span style="font-size:14.0pt;line-height:115%" lang="EN-US">DAC</span></b><b><span style="font-size:14.0pt;line-height:115%">(ЦАП)</span></b></p>
+
+<p class="MsoNormal" style="text-align:justify">Пришло время для практического
+изучения способов передачи и воспроизведения <span lang="EN-US">DSD</span>.</p>
+
+<p class="MsoNormal" style="text-align:justify">Обычно <span lang="EN-US">DSD</span>
+поток в <span lang="EN-US">DIY</span><span lang="EN-US"> </span>устройствах передаётся
+от источника к цифро-аналоговому преобразователю посредством <span lang="EN-US">I</span>2<span lang="EN-US">S</span><span lang="EN-US"> </span>конвертера, но далеко не все
+конвертеры поддерживают <span lang="EN-US">DSD</span>. Поэтому перед покупкой
+обязательно нужно удостовериться, что бы в спецификациях была указана поддержка
+<span lang="EN-US">DSD</span>. Самые дешёвые <span lang="EN-US">USB</span><span lang="EN-US"> </span><span lang="EN-US">to</span><span lang="EN-US"> </span><span lang="EN-US">I</span>2<span lang="EN-US">S</span> конвертеры с поддержкой <span lang="EN-US">DSD</span>: это преобразователи <span lang="EN-US">Amanero</span>, или
+преобразователи, построенные на базе <span lang="EN-US">Amanero</span> путём
+полного копирования платы, а так же конвертеры с применением процессоров от
+компании <span lang="EN-US">XMOS</span>. Ещё нужно учесть, что не все плееры
+поддерживают воспроизведение <span lang="EN-US">DSD</span><span lang="EN-US"> </span>и
+не все драйвера в состоянии передать чистый <span lang="EN-US">DSD</span>(DSD native),
+даже если плеер на это способен. Ограничение драйвера можно преодолеть,
+используя <span lang="EN-US">DOP</span>(<span lang="EN-US">DSD</span><span lang="EN-US"> </span><span lang="EN-US">Over</span><span lang="EN-US"> </span><span lang="EN-US">PCM</span>), соответственно плеер так же должен иметь возможность
+преобразования <span lang="EN-US">DSD</span><span lang="EN-US"> </span>в <span lang="EN-US">DOP</span>.</p>
+
+<p class="MsoNormal" style="text-align:justify">Передача <span lang="EN-US">DSD</span>
+потока к ЦАПу в случае <span lang="EN-US">Amanero</span> и <span lang="EN-US">XMOS</span>
+происходит по тем же выходам <span lang="EN-US">I</span>2<span lang="EN-US">S</span>:
+<span lang="EN-US">DATA</span><span lang="EN-US"> </span>передаёт данные правого
+канала, <span lang="EN-US">LRCK</span> данные левого, а <span lang="EN-US">BCLK</span>
+битовую синхронизацию этих данных.</p>
+
+<p class="MsoNormal" style="text-align:justify">Воспроизвести <span lang="EN-US">DSD</span><span lang="EN-US"> </span>поток можно разными способами, стоит выделить три: </p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-align:justify;text-indent:-18.0pt"><b>1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b><b>Проприетарные
+ЦАП</b></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-align:justify;text-indent:-18.0pt"><b>2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b><b>Через
+ФНЧ</b></p>
+
+<p class="MsoListParagraphCxSpLast" style="text-align:justify;text-indent:-18.0pt"><b>3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b><b>DIY
+ЦАП</b></p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b><span style="font-size:14.0pt;
+line-height:115%">Проприетарный ЦАП</span></b></p>
+
+<p class="MsoNormal" style="text-align:justify">Про этот способ особо расписывать
+нечего, большинство коммерческих ЦАП, поддерживающих воспроизведение <span lang="EN-US">DSD</span>, принимают через один и тот же разъём <span lang="EN-US">I</span>2<span lang="EN-US">S</span>, как <span lang="EN-US">PCM</span>, так и <span lang="EN-US">DSD</span>.
+В этом случае достаточно подключить контакты конвертера и ЦАПа тем же образом,
+описанным выше, и переключение между <span lang="EN-US">PCM</span>-<span lang="EN-US">DSD</span><span lang="EN-US"> </span>будет работать автоматически.
+Бывают отдельные входы для <span lang="EN-US">DSD</span>, но это реализовано для
+раздельного подключения устройств, использовать их в большинстве случаев не
+обязательно.</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b><span style="font-size:14.0pt;
+line-height:115%">Воспроизведение&nbsp; через ФНЧ</span></b></p>
+
+<p class="MsoNormal" style="text-align:justify">Этот способ подкупает своей
+простотой и, кстати, неплохим звучанием. Суть его, как понятно из названия,
+заключается в воспроизведении DSD напрямую через фильтр нижних частот, без
+использования какого-либо цифро-аналогового преобразователя. Когда узнал об
+этом способе впервые - был настроен скептически, однако, оказалось звучит такой
+вариант лучше, чем все ЦАПы которые я слушал до этого. Не хочу ни кого
+убеждать, но для себя сделал выводы и вряд ли вернусь теперь к проприетарным цифро-аналоговым
+преобразователям.</p>
+
+<p class="MsoNormal" style="text-align:justify">Единственная проблема, при таком
+способе воспроизведения, заключается в малом количестве контента <span lang="EN-US">DSD</span><span lang="EN-US"> </span>по сравнению с Audio CD, но, как
+оказалось, это решаемо при помощи конвертации <span lang="EN-US">PCM</span>(ИКМ) в
+<span lang="EN-US">DSD</span>. Конвертация может происходить: как заранее, перед
+прослушиванием, так и в реальном времени, как на ПК, так и на устройствах с <span lang="EN-US">Android</span><span lang="EN-US"> </span>и <span lang="EN-US">iOS</span>.
+Поэтому можно собрать как стационарное устройство, подключаемое к компьютеру
+или микрокомпьютеру, так и переносное устройство, подключаемое к смартфону или
+планшету.</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b>Принцип работы</b></p>
+
+<p class="MsoNormal" style="text-align:justify">В формате DSD, как уже было
+сказано, используется плотностно-импульсная модуляция, на выходе <span lang="EN-US">I</span>2<span lang="EN-US">S</span> рядом стоящие положительные
+импульсы(логические единицы) складываются в один продолжительный по времени
+импульс что приводит к росту напряжения, при отсутствии положительных импульсов
+напряжение падает. </p>
+
+<p class="MsoNormal" style="text-align:justify"><img id="Рисунок 59" src="assets/img/image028.jpg" width="769" height="110" border="0"></p>
+
+<p class="MsoNormal" style="text-align:justify">Т.к. поток логических единиц и
+нулей последовательный, если подключить выход одного из каналов <span lang="EN-US">DSD</span> к фильтру нижних частот и убрать постоянную составляющую,
+можно получить модулированный сигнал, который в свою очередь можно подать на
+вход усилителя. Подобным образом происходило преобразование цифрового потока в
+аналоговый сигнал в однобитных сигма-дельта цифро-аналоговых преобразователях.
+И, по сути, в этом способе нет ни чего нового.</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b>Выбор фильтра</b></p>
+
+<p class="MsoNormal" style="text-align:justify">В качестве фильтра нижних частот может
+выступать простая RС или <span lang="EN-US">RL</span><span lang="EN-US"> </span>цепь,
+а для удаления постоянной составляющей сигнала достаточно обычного
+конденсатора.</p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><img src="assets/img/image029.jpg" width="629" height="223" border="0"></p>
+
+<p class="MsoNormal" style="text-align:center" align="center">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify">Рассчитать такие фильтры довольно
+просто <span lang="EN-US">RC</span>(сопротивление, ёмкость) рассчитывается по
+формуле <img id="Рисунок 1" src="assets/img/image030.jpg" alt="Cutoff Frequency Formula" width="80" height="28" border="0">, <span lang="EN-US">RL</span>(сопротивление, индуктивность) по формуле<img id="Рисунок 4" src="assets/img/image031.jpg" alt="Cutoff frequency formula for a RL filter" width="77" height="28" border="0">, где <b><span style="font-size:16.0pt;line-height:115%" lang="EN-US">f<sub>c</sub></span></b><b><sub><span style="font-size:16.0pt;line-height:115%" lang="EN-US"> </span></sub></b>– частота
+среза фильтра, её лучше выбирать в диапазоне от 25 до 50 кГц. </p>
+
+<p class="MsoNormal" style="text-align:justify">Для удобства можно использовать
+ <a href="http://xn--80atbdbsooh2gqb.xn--80aehb1bzc.xn--p1ai/radio-cepi/RC-LPF.html">онлайн калькулятор</a>
+</p>
+
+<p class="MsoNormal" style="text-align:justify">Ёмкость конденсатора(на схеме
+справа) для удаления постоянной составляющей рассчитывается как <span lang="EN-US">RC</span> ФВЧ – фильтр верхних частот </p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><img id="Рисунок 19" src="assets/img/image032.jpg" width="210" height="156" border="0"></p>
+
+<p class="MsoNormal" style="text-align:center" align="center">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify">По формуле<img src="assets/img/image033.jpg" alt="Cutoff Frequency Formula" width="80" height="29" border="0">где в качестве сопротивления выступает переменный
+резистор на входе усилителя(предусилителя), соответственно <b><span lang="EN-US">R</span></b><span lang="EN-US"> </span>будет равно номинальному сопротивлению этого резистора, ёмкость
+конденсатора нужно выбрать такую, чтобы частота среза не превышала 30 Герц.
+Можно также воспользоваться  <a href="http://xn--80atbdbsooh2gqb.xn--80aehb1bzc.xn--p1ai/radio-cepi/RC-HPF.html">калькулятором</a>
+</p>
+
+<p class="MsoNormal" style="text-align:justify">Но не всё так просто, есть важный
+момент, для нормального воспроизведения необходим фильтр с хорошей крутизной
+среза, иначе высокочастотные составляющие сигнала могут привести к интермодуляционным
+искажениям и перегрузке усилителя(предусилителя). Для увеличения крутизны среза
+используют фильтры нескольких порядков.</p>
+
+<p class="MsoNormal" style="text-align:justify">Выбор порядка фильтра и частоты
+среза будет во многом зависеть от усилителя(предусилителя), так, например, для
+многих транзисторных усилителей фильтра ФНЧ 1 порядка будет скорее всего мало,
+и как следствие это приведет к шумам и искажениям. А для ламповых усилителей,
+не для всех конечно, первого порядка может быть вполне достаточно. В выборе
+фильтра решающую роль будет играть то как усилитель реагирует на высокие
+частоты, и определить это можно меняя порядок фильтра и частоту среза. Необходимо
+будет искать компромисс между «звучанием» и уровнем искажений. При срезе ФНЧ
+ниже 20 кГц. сильно ухудшается качество звучания, при слишком высоком срезе
+может появиться шум или эффекты перегрузки. На каких-то усилителях достаточно
+будет фильтра 1 порядка и частоты среза в 40-50 кГц., а на других придётся
+использовать ФНЧ 2-3 порядка и понижать частоту среза до 25 кГц. Но нужно
+понимать, чем ниже частота среза ФНЧ тем больше влияния на сигнал он оказывает,
+т.к. спад уровня сигнала происходит постепенно, затрагивая и другие частоты ещё
+до выбранной частоты среза. Подробнее можно прочитать  <a href="http://textarchive.ru/c-2555931-pall.html">тут</a>
+</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b><span style="font-size:14.0pt;
+line-height:115%">DIY ЦАП</span></b></p>
+
+<p class="MsoNormal" style="text-align:justify">Это будет самый большой раздел, в
+нём детально рассказано, как собрать собственный ЦАП с минимальными затратами.
+Будет рассмотрено несколько концепций разной степени сложности, расположены они
+от более простого варианта к более сложному.</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b><span style="font-size:14.0pt;
+line-height:115%">Предусиление</span></b></p>
+
+<p class="MsoNormal" style="text-align:justify">При прослушивании через ФНЧ может
+возникнуть вопрос усиления низкого уровня громкости. И если усилитель не очень
+мощный или хотите слушать музыку через наушники без подключения к усилителю, будет
+необходим предусилитель. Возможны различные варианты:</p>
+
+<p class="MsoNormal" style="text-align:justify"><b>&nbsp;</b></p>
+
+<p class="MsoNormal" style="text-align:justify"><b>Стационарный вариант</b></p>
+
+<p class="MsoNormal" style="text-align:justify">Наилучшим образом для
+стационарного варианта себя зарекомендовали повышающие входные трансформаторы,
+например такие:</p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><img id="Рисунок 36" src="assets/img/image034.jpg" alt="350095.jpg" width="643" height="385" border="0"></p>
+
+<p class="MsoNormal" style="text-align:justify">Увеличивают напряжение сигнала
+примерно в 4 раза, возможно подключение к балансному входу/выходу, диапазон
+воспроизводимых частот 20 Гц. - 20 кГц., стоимость примерно 2000 рублей за
+пару. Это одни из самых дешёвых трансформаторов, но поставленную задачу выполняют.
+</p>
+
+<p class="MsoNormal" style="text-align:justify">У способа усиления с помощью
+трансформаторов конечно есть и недостатки:</p>
+
+<p class="MsoNormal" style="text-align:justify">Во-первых, цена, эти
+трансформаторы довольно дешёвые, но если хотите что-то более качественное, стоимость
+может возрасти в десятки раз.</p>
+
+<p class="MsoNormal" style="text-align:justify">Трансформаторы усиливают лишь
+напряжение, поэтому сами по себе их использовать нельзя, только в связке с усилителем.</p>
+
+<p class="MsoNormal" style="text-align:justify">Для использования необходимо
+убрать постоянную составляющую, для этого придётся на вход трансформатора последовательно
+подключить конденсатор, причём, в случае с вышеупомянутыми трансформаторами, довольно
+большой ёмкости, т.к. конденсатор и входное сопротивление трансформатора формируют
+фильтр высоких частот.</p>
+
+<p class="MsoNormal" style="text-align:justify">Для расчёта ёмкости конденсатора
+нужно взять сопротивление трансформатора, в данном случае 600 Ом и, как уже
+было написано ранее, подставить в формулу <img id="Рисунок 22" src="assets/img/image033.jpg" alt="Cutoff Frequency Formula" width="80" height="29" border="0">, частоту среза следует выбирать минимальную. Я
+например использовал конденсаторы на 22 мкФ., частота среза получилась около 12
+Герц. Да, и старайтесь использовать качественные конденсаторы с низким значением
+ESR, потому как через них напрямую будет проходить сигнал, и они могут оказать
+сильное влияние. </p>
+
+<p class="MsoNormal" style="text-align:justify">Ещё нужно будет использовать ФНЧ,
+что бы убрать высокочастотный шум, первого порядка фильтра вероятно должно
+хватить. Трансформаторы имеют определенную полосу пропускания, и при совместном
+использовании с ФНЧ увеличивается крутизна среза. Для фильтра логичнее всего
+использовать <span lang="EN-US">RL</span><span lang="EN-US"> </span>цепь(сопротивление,
+индуктивность) в которой в качестве сопротивления <b><span lang="EN-US">R</span></b>
+будет выступать входное сопротивление трансформатора, а в качестве
+индуктивности катушка индуктивности, в данном случае 2,2 – 2,7 мГн.(миллигенри).</p>
+
+<p class="MsoNormal" style="text-align:center" align="center">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><img id="Рисунок 7" src="assets/img/image035.jpg" width="519" height="245" border="0"></p>
+
+<p class="MsoNormal">Индуктивный фильтр можно рассчитать вот этим <a href="http://www.learningaboutelectronics.com/Articles/Low-pass-filter-calculator.php"><b>калькулятором </b></a><b>
+</b></p>
+
+<p class="MsoNormal">Такой способ предусиления хорошо подходит для стационарного
+использования, но носить с собой трансформаторы и усилитель, пусть даже небольшого
+размера, вряд ли&nbsp; кому то захочется. Так давайте рассмотрим, как можно собрать
+переносное&nbsp; устройство, которое свободно поместится в карман.</p>
+
+<p class="MsoNormal" style="text-align:justify"><b>&nbsp;</b></p>
+
+<p class="MsoNormal" style="text-align:justify"><b>Портативный вариант</b></p>
+
+<p class="MsoNormal" style="text-align:justify">Для портативного варианта лучше
+всего подойдёт предусилитель на микросхеме с однополярным питанием не более 5
+вольт. Лучше всего пойти по пути наименьшего сопротивления, в прямом и
+переносном смысле, собрать всё в одном, активный ФНЧ фильтр и предусилитель на
+операционном усилителе. Подбор и расчёт такого фильтра можно выполнить и
+вручную, но самый простой способ - использовать специальные онлайн приложения
+для расчётов, например <a href="https://tools.analog.com/en/filterwizard">Analog Filter Wizard</a>
+от <span lang="EN-US">Analog</span><span lang="EN-US"> </span><span lang="EN-US">Devices</span>
+или  <a href="https://webench.ti.com/filter-design-tool">Filter Design Tool</a><span lang="EN-US"> </span>от <span lang="EN-US">Texas</span><span lang="EN-US"> </span><span lang="EN-US">Instruments</span>. Приложения довольно
+просты в обращении, нужно указать только: </p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-align:justify;text-indent:-18.0pt"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Тип фильтра выбираем - Low Pass</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-align:justify;text-indent:-18.0pt"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>усиление Gain - можно задать в вольтах, оно не должно превышать
+значения питания</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-align:justify;text-indent:-18.0pt"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Passband - нужная частота среза</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-align:justify;text-indent:-18.0pt"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>параметр Stopband нужно задать таким образом, чтобы получился
+фильтр второго порядка - 2nd order, иначе придётся использовать два и более
+операционных усилителя.</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-align:justify;text-indent:-18.0pt"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>напряжение питания +Vs – 3-5 Вольт, -Vs - 0 Вольт</p>
+
+<p class="MsoNormal" style="text-align:justify">А также исходя из характеристик
+можно выбрать микросхему, для которой будут производиться расчёты, вот и всё.</p>
+
+<p class="MsoNormal" style="text-align:justify">Я использовал Analog Filter Wizard
+и у меня получилась следующая схема:</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><img id="Рисунок 35" src="assets/img/image036.jpg" width="473" height="395" border="0"></p>
+
+<p class="MsoNormal" style="text-align:center" align="center">Спецификации</p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><span lang="EN-US">Specifications:
+Optimize: Specific Parts; +Vs: 3; -Vs: 0</span></p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><span lang="EN-US">Gain:
+3 V/V</span></p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><span lang="EN-US">Passband:
+-3dB at 35kHz</span></p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><span lang="EN-US">Stopband</span>:
+-40<span lang="EN-US">dB</span><span lang="EN-US"> </span><span lang="EN-US">at</span>
+500<span lang="EN-US">kHz</span></p>
+
+<p class="MsoNormal" style="text-align:center" align="center">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify">Те, кто не любят паять или плохо
+разбираются в электротехнике, конечно, могут купить готовый предусилитель с фильтром,
+например <a href="https://aliexpress.ru/item/32946368628.html?spm=a2g0v.12057483.0.0.22a72cafnB54kc">такой</a>:</p>
+
+<p class="MsoNormal" style="text-align:justify"><img id="Рисунок 53" src="assets/img/image037.jpg" alt="https://images.ru.prom.st/689901413_w640_h640_uaf42-active-high.jpg" width="438" height="398" border="0"></p>
+
+<p class="MsoNormal" style="text-align:justify"><span lang="EN-US"> </span></p>
+
+<p class="MsoNormal" style="text-align:justify">Но придётся потратиться потому,
+что необходимо будет две штуки таких фильтров, по одной на канал.</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify">Или можно купить <a href="http://jlsounds.com/drv.html">такой</a>  вариант,
+на два канала:</p>
+
+<p class="MsoNormal" style="text-align:justify"><img id="Рисунок 56" src="assets/img/image038.jpg" alt="http://jlsounds.com/uploads/DRV_p.jpg" width="578" height="329" border="0">&nbsp; </p>
+
+<p class="MsoNormal" style="text-align:justify"></p>
+
+<p class="MsoNormal" style="text-align:justify">Но он рассчитан для балансного подключения,
+кто не знает, это когда каждый канал передаётся отдельно по <a href="https://pop-music.ru/articles/balansnyy-i-nebalansnyy-kabeli-podklyuchaysya-pravilno">трёхпроводной схеме</a>:
+по одному проводу передаётся основной сигнал, по второму проводу этот же сигнал
+в противофазе, а третий провод — это земля.
+</p>
+
+<p class="MsoNormal">Поэтому напрямую подключать не лучшая идея, но можно
+получить сигнал в противофазе, инвертируя выход <span lang="EN-US">DSD</span><span lang="EN-US"> </span>при помощи, либо операционного усилителя, либо <a href="https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D0%B8%D0%B3%D0%B3%D0%B5%D1%80_%D0%A8%D0%BC%D0%B8%D1%82%D1%82%D0%B0">триггера
+Шмитта</a>, либо <a href="https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D1%80_(%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BD%D0%B8%D0%BA%D0%B0)">логического инвертора</a>.</p>
+
+<p class="MsoNormal">
+&nbsp; </p>
+
+<p class="MsoNormal">Важно получить два идентичных сигнала в противофазе, любые,
+даже малейшие различия будут оказывать значительное влияние на выходной сигнал.
+</p>
+
+<p class="MsoNormal">При выборе элементов обязательно нужно обратить внимание на
+то, с какой частотой они могут работать, т.к. частота <span lang="EN-US">DSD</span><span lang="EN-US"> </span>потока может варьироваться от 2822,4 кГц. до 24576 кГц. А так
+же, настоятельно рекомендую использовать гальваническую развязку, если не
+знаете что это - вам  <a href="https://habr.com/ru/post/386721/">сюда</a>
+. Вот таким образом можно реализовать подключение по балансной схеме. Если
+поискать в интернете, можно найти и другие варианты готовых фильтров-предусилителей.
+А для тех, кто не ищет лёгких путей, перейдем к собственной сборке.</p>
+
+<p class="MsoNormal" style="text-align:justify"><b><span style="font-size:14.0pt;
+line-height:115%">&nbsp;</span></b></p>
+
+<p class="MsoNormal" style="text-align:justify"><b><span style="font-size:14.0pt;
+line-height:115%">Сборка портативного варианта</span></b></p>
+
+<p class="MsoNormal" style="text-align:justify"><b><span style="font-size:14.0pt;
+line-height:115%">&nbsp;</span></b></p>
+
+<p class="MsoNormal" style="text-align:justify"><b><span lang="EN-US">Hardware</span><span lang="EN-US"> </span></b></p>
+
+<p class="MsoNormal" style="text-align:justify">В качестве <span lang="EN-US">I</span>2<span lang="EN-US">S</span><span lang="EN-US"> </span>конвертера можно использовать платы:</p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-align:justify;text-indent:-18.0pt">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>На
+основе чипов <b><span lang="EN-US">Xmos</span><span lang="EN-US"> </span></b>–
+стоимость от 1700 руб., принцип подключения будет тот же, но у них довольно
+высокое энергопотребление. </p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-align:justify;text-indent:-18.0pt">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Оригинальный
+<b><span lang="EN-US">Amanero</span><span lang="EN-US"> </span></b>– стоимость
+около 7000 руб., </p>
+
+<p class="MsoListParagraphCxSpLast" style="text-align:justify;text-indent:-18.0pt">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Китайскую
+копию, плата <b>ATSAM3U1C XC2C64A.</b> Минимальная стоимость «репликанта» около
+2000 рублей, это почти полная копия Amanero, основное их отличие в качестве
+материала самой платы и компонентов.</p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><img id="Рисунок 5" src="assets/img/image039.jpg" alt="dsc03438" width="606" height="444" border="0"></p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify">В качестве фильтра<b> </b>и
+предусилителя<b> </b><b><span lang="EN-US">AD</span>8656</b> – Операционный усилитель.</p>
+
+<p class="MsoNormal" style="margin-left:18.0pt;text-align:center" align="center"><img id="Рисунок 32" src="assets/img/image040.png" alt="AD8656-pcl" width="400" height="211" border="0"></p>
+
+<p class="MsoNormal" style="margin-left:18.0pt;text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify">А так же нужны будут<b> </b>расходники
+– резисторы и конденсаторы которые указаны в схеме ниже. </p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><span style="color:black">Схема
+подключения выглядит примерно так:</span></p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><img id="Рисунок 46" src="assets/img/image041.jpg" width="692" height="441" border="0"></p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify">В идеале нужно использовать для
+контактов FSCLK и DATA гальваническую развязку. Выбирать развязку желательно с
+запасом по скорости передачи данных, от 25mbps(мегабит в секунду) и выше, а
+диапазон напряжения питания развязки желательно выбрать 2.7 – 5.5 Вольт. Для
+питания операционного усилителя лучше всего использовать отдельный, малошумящий
+стабилизатор напряжения. На входе можно добавить сопротивление, для ограничения
+уровня сигнала, а на выход добавить ФНЧ. Вот собственно и всё.</p>
+
+<p class="MsoNormal" style="text-align:justify">Получившееся устройство не
+занимает много места и его можно подключить через <span lang="EN-US">OTG</span><span lang="EN-US"> </span>к телефону или планшету.</p>
+
+<p class="MsoNormal" style="text-align:justify"><b>&nbsp;</b></p>
+
+<p class="MsoNormal" style="text-align:justify"><b><span lang="EN-US">Software</span></b></p>
+
+<p class="MsoNormal" style="text-align:justify">Драйвера под Windows, для <span lang="EN-US">Amanero</span><span lang="EN-US"> </span>и китайской реплики(ATSAM3U1C
+XC2C64A) можно скачать с  <a href="https://amanero.com/">сайта Amanero</a>
+. На Linux и Android драйвера не нужны, на iOS вероятно тоже.</p>
+
+<p class="MsoNormal" style="text-align:justify">Раз уж рассматриваем портативный вариант
+тогда и плеер нужно выбирать под Android, <span lang="EN-US">iOS</span>.
+Существуют десятки плееров с поддержкой Hi-Res <span lang="EN-US">PCM</span>, но
+через фильтр можно слушать только <span lang="EN-US">DSD</span>, поэтому
+необходима конвертация «<span lang="EN-US">PCM</span><span lang="EN-US"> </span><span lang="EN-US">to</span><span lang="EN-US"> </span><span lang="EN-US">DSD</span>». К
+счастью есть плеер под <span lang="EN-US">Android</span><span lang="EN-US"> </span>и
+<span lang="EN-US">iOS</span>, который может конвертировать <span lang="EN-US">PCM</span><span lang="EN-US"> </span>в <span lang="EN-US">DSD</span><span lang="EN-US"> </span>в
+реальном времени - <span lang="EN-US">O</span>nkyo HF Player. Этот плеер из <span lang="EN-US">mp</span>3 и <span lang="EN-US">flac</span><span lang="EN-US"> </span>может
+конвертировать в <span lang="EN-US">DSD</span>64 и 128. При помощи Onkyo HF
+Player становится возможным прослушивание практически любой музыки через
+простой ФНЧ фильтр. Жаль, конечно, что плеер не бесплатен, но цена у него не
+сильно ударит по карману: для Android, на момент написания статьи, он стоит 699
+руб., а для <span lang="EN-US">iOS</span> 749 руб. </p>
+
+<p class="MsoNormal" style="text-align:justify">При воспроизведении <span lang="EN-US">DSD</span><span lang="EN-US"> </span>через ФНЧ, по сравнению с
+классическим способом воспроизведения через ЦАП, достигается два преимущества:</p>
+
+<p class="MsoNormal" style="text-align:justify"><b>Во-первых,</b> звук получается
+гораздо лучше, чем на многих ЦАП. </p>
+
+<p class="MsoNormal" style="text-align:justify">Почему так? Основная составная
+часть дельта-сигма ЦАП это, как уже было написано в теоретической части, цифровая
+обработка сигнала. Для реализации сложного цифрового фильтра с многократным oversampling(ом),
+модулятором 5-7 порядка с Dithering(ом)/Noise shaping(ом), требуется серьёзная
+вычислительная мощность, которая в ЦАП ограничена, а в современных процессорах для
+смартфонов в разы больше. Соответственно на смартфоне можно реализовать более
+качественную цифровую фильтрацию и модуляцию. Почему производители не добавляют
+мощные процессоры в ЦАП, загадка. Может экономят, а может считают, что
+обработкой должно заниматься отдельное устройство. Те же Asahi Kasei Microdevices(AKM)
+например, выпускают отдельно <span lang="EN-US">DSP</span> которые занимаются
+конвертацией, в том числе <span lang="EN-US">c</span><span lang="EN-US"> </span>применением
+oversampling, и отдельно ЦАПы с режимом bypass.</p>
+
+<p class="MsoNormal" style="text-align:justify"><b>Во вторых</b> такой способ
+воспроизведения существенно экономит деньги, т.к. стоимость хорошего ЦАП, даже
+Китайского, будет гораздо выше.</p>
+
+<p class="MsoNormal" style="text-align:justify"><b>&nbsp;</b></p>
+
+<p class="MsoNormal" style="text-align:justify"><b>Итого</b></p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-align:justify;text-indent:-18.0pt"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Данное устройство довольно легко повторить, даже начинающим
+радиолюбителям.</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-align:justify;text-indent:-18.0pt"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Имеется возможность подключения к мобильным устройствам.</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-align:justify;text-indent:-18.0pt"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Стоимость его составит примерно от 2000 руб.</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-align:justify;text-indent:-18.0pt"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>На телефоне с батареей в 3200мАч. Данный <span lang="EN-US">DIY</span>
+ЦАП проработал более 6 часов, в режиме прослушивания с конвертацией PCM – DSD в
+реальном времени.</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-align:justify;text-indent:-18.0pt"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Звук лучше многих топовых ЦАП(ИМХО).</p>
+
+<p class="MsoNormal" style="text-align:justify">Из минусов можно отметить что
+выход одноуровневый, поэтому шум будет коррелирован с основным сигналом и при
+слабом уровне этого сигнала возможны небольшие искажения.</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b><span style="font-size:14.0pt;
+line-height:115%">Сборка стационарного варианта</span></b></p>
+
+<p class="MsoNormal" style="text-align:justify">Должен предупредить, этот вариант
+будет гораздо сложнее в реализации, но оно того стоит.</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b><span lang="EN-US">Hardware</span></b></p>
+
+<p class="MsoNormal" style="text-align:justify">Самый лучший результат получается
+с использованием <b><span lang="EN-US">B</span>eaglebone black</b> или <b><span lang="EN-US">B</span>eaglebone green </b>в качестве <span lang="EN-US">I</span>2<span lang="EN-US">S</span><span lang="EN-US"> </span>конвертера</p>
+
+<p class="MsoNormal" style="text-align:justify"><img id="Рисунок 50" src="assets/img/image042.jpg" alt="https://beagleboard.org/static/images/BBG_Photo_overview.jpg" width="350" height="563" border="0"><img id="Рисунок 47" src="assets/img/image043.jpg" alt="https://beagleboard.org/static/ti/product_detail_black_lg.jpg" width="380" height="577" border="0"></p>
+
+<p class="MsoNormal" style="text-align:justify">Поясню, почему именно beaglebone
+– это единственный микрокомпьютер, для которого есть открытый драйвер с
+поддержкой подключения внешнего генератора тактовой частоты. К внешнему
+генератору можно подключить как сам конвертер, так и ЦАП(если он есть), что
+позволит существенно снизить ошибки при передаче данных по <span lang="EN-US">I</span>2<span lang="EN-US">S</span>. А ещё это дает возможность выбирать, какого качества и
+какой частоты мы хотим использовать генератор. ЦАП для прослушивания <span lang="EN-US">DSD</span> в данном варианте, как мы уже убедились, не нужен, но
+подключение качественных генераторов 45158.4 кГц. и 49152 кГц. будет важно при
+воспроизведении <span lang="EN-US">DSD</span> 256, 512 т.к. частота однобитного
+сигнала будет очень высокой 11289,6 кГц. и 22579,2 кГц. соответственно. Частота
+тактового генератора <span lang="EN-US">MCLK</span><span lang="EN-US"> </span>должна
+быть хотя бы в два раза больше частоты передаваемых данных, иначе могут
+возникнуть ошибки при передаче.</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b>Внешний клок</b></p>
+
+<p class="MsoNormal" style="text-align:justify">Первое что потребуется, это
+внешний генератор тактовой частоты или в простонародье «клок», тут как обычно
+есть два пути: если вы дружите с паяльником, то можно собрать сами, если нет,
+можно купить готовое решение.</p>
+
+<p class="MsoNormal" style="text-align:justify">Существует проект Павла Погодина,
+под открытой лицензией, по созданию DIY ЦАПА с названием  <a href="https://puredsd.ru/">«DSC»</a>. На сайте выложена&nbsp;
+документация к ЦАПу Павла, о нём мы ещё поговорим, но кроме того там же
+выложена схема реклокера для beaglebone. В этой схеме реализовано подключение
+внешних клоков и автоматическое переключение их под частотные сетки 44.1/48. Можно
+взять её за основу и собрать нечто похожее. </p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><img id="Рисунок 62" src="assets/img/image044.jpg" alt="http://puredsd.ru/media/reclk.jpg" width="633" height="475" border="0"></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify">Эта плата разработана для
+воспроизведения как <span lang="EN-US">PCM</span>, так и <span lang="EN-US">DSD</span>,
+но если вас, как и меня, интересует исключительно воспроизведение <span lang="EN-US">DSD</span>, можно обойтись только этой частью схемы:</p>
+
+<p class="MsoNormal" style="text-align:justify"><img id="Рисунок 66" src="assets/img/image045.jpg" width="767" height="258" border="0"></p>
+
+<p class="MsoNormal" style="text-align:justify">Все названия элементов и номиналы
+указаны в <a href="http://puredsd.ru/BBBreclk.pdf">документации</a>
+:</p>
+
+<p class="MsoNormal" style="text-align:justify">Ну, и конечно самый простой, и в
+то же время затратный способ - это купить готовые генераторы. Самые дешёвые, из
+более-менее приемлемых генераторов, выглядят примерно так:</p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><img id="Рисунок 67" src="assets/img/image046.jpg" alt="1PPM-45-1584-22-5792" width="500" height="269" border="0"></p>
+
+<p class="MsoNormal" style="text-align:justify">Для возможности автоматического
+переключения под частотные сетки 44.1/48 паяльник всё-таки в руки взять придётся,
+и распаять селектор <span lang="EN-US">U</span>7(74<span lang="EN-US">aup</span>2<span lang="EN-US">g</span>157) указанный на схеме выше, иначе нужно будет переключать
+генераторы вручную. Так, например, для прослушивания <span lang="EN-US">CDDA</span>,
+<span lang="EN-US">MP</span>3, и <span lang="EN-US">DSD</span><span lang="EN-US"> </span>потребуется
+только генератор 45158.4 кГц., а если захотите слушать «винилрипы» с частотой
+дискретизации 96 и 192 кГц., тут уже нужен будет генератор 49152 кГц. </p>
+
+<p class="MsoNormal" style="text-align:justify">После подключения генератора к Beaglebone
+black(контакт P9_25) останется только вывести два канала <span lang="EN-US">DSD</span>(контакты
+<span lang="EN-US">P</span>9_30,<span lang="EN-US">P</span>9_41)</p>
+
+<p class="MsoNormal" style="text-align:center" align="center">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><img id="Рисунок 14" src="assets/img/image047.jpg" width="357" height="472" border="0"></p>
+
+<p class="MsoNormal" style="text-align:justify">Номера контактов указаны для
+дистрибутива  <a href="http://puredsd.ru/botic7-image_latest.gz">«mini Botic7»</a>
+собранный Павлом. Нужно к контактам <span lang="EN-US">DSD</span>1 и <span lang="EN-US">DSD</span>2 подключить фильтр, и устройство будет готово к работе.</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b><span lang="EN-US">Software</span></b></p>
+
+<p class="MsoNormal" style="text-align:justify">Теперь поговорим про программную
+часть, начнем с драйвера.</p>
+
+<p class="MsoNormal" style="text-align:justify"><b><span style="font-size:14.0pt;
+line-height:115%">&nbsp;</span></b></p>
+
+<p class="MsoNormal" style="text-align:justify"><b>Драйвер</b></p>
+
+<p class="MsoNormal" style="text-align:justify">Для <span lang="EN-US">Beaglebone</span><span lang="EN-US"> </span><span lang="EN-US">black</span>/<span lang="EN-US">green</span>,
+как уже было указано, существует открытый драйвер, написал его участник форума diyaudio.com
+под ником <span lang="EN-US">M</span>iero. Официальная страница  <a href="http://bbb.ieero.com/">драйвера</a> . Он имеет довольно
+много настроек, можно задать, например: вывод <span lang="EN-US">PCM</span><span lang="EN-US"> </span>и <span lang="EN-US">DSD</span><span lang="EN-US"> </span>на
+разные контакты, длину кадра <span lang="EN-US">LRCLK</span>(актуально для
+мультибитов) или определенную частоту генератора тактовой частоты. На сайте
+описаны возможные настройки, менять их можно посредством правки конфиг файла, который
+расположен по пути /<span lang="EN-US">boot</span>/<span lang="EN-US">uEnv</span>.<span lang="EN-US">txt</span>, но в нашем случае менять ничего не придётся. Нужно
+только <a href="http://puredsd.ru/botic7-image_latest.gz">скачать</a> прошивку для Beaglebone black <span lang="EN-US">c</span><span lang="EN-US"> </span>сайта Павла Погодина 
+, в прошивке уже имеется этот драйвер. Скаченную прошивку нужно записать на MicroSD
+карту при помощи, например, программы <span lang="EN-US">dd</span><span lang="EN-US"> </span>на <span lang="EN-US">Linux</span><span lang="EN-US"> </span>или
+программы <span lang="EN-US">R</span>ufus на <span lang="EN-US">Windows</span>.
+После чего вставить эту карту в разъём на микрокомпьютере, зажать кнопку рядом
+с этим разъёмом и подключить питание. &nbsp;Через несколько секунд кнопку можно
+отпускать, должна начаться загрузка, весело мигая светодиодами. По умолчанию
+будет загружен профиль с клиентом для <span lang="EN-US">HQPlayer</span>, он то
+нам и нужен. Также прошивку можно скопировать во внутреннюю память <span lang="EN-US">Beaglebone</span><span lang="EN-US"> </span><span lang="EN-US">black</span>,&nbsp;
+инструкции есть на  <a href="https://puredsd.ru/">сайте</a></p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b>HQPlayer</b></p>
+
+<p class="MsoNormal" style="text-align:justify">Этот плеер можно назвать лучшим
+для воспроизведения с условием конвертации <span lang="EN-US">PCM</span> в <span lang="EN-US">DSD</span>, т.к. у него самый большой набор модуляторов и цифровых
+фильтров. Он поддерживает 11 <span lang="EN-US">SDM</span>(сигма-дельта)
+модуляторов, 30 различных цифровых фильтров, oversampling до 98.304 мГц.(<span lang="EN-US">DSDx</span>2048), а так же поддерживает технологию <span lang="EN-US">CUDA</span>.
+Конечно, oversampling в <span lang="EN-US">DSDx</span>2048, в нашем случае, это
+перебор, т.к &nbsp;Beaglebone black и Amanero могут воспроизводить максимум <span lang="EN-US">DSD</span><span lang="EN-US"> </span>512. Но и это достигается с
+трудом, не многие компьютеры могут потянуть даже <span lang="EN-US">DSD</span>
+256 на «тяжёлых» цифровых фильтрах со сложными модуляторами. Цифровые фильтры в
+HQPlayer очень качественные и требуют довольно большую вычислительную мощность.</p>
+
+<p class="MsoNormal" style="text-align:justify">Из минусов: плеер платный, причём
+не из дешёвых, поддерживает крайне ограниченный набор форматов CDDA, <span lang="EN-US">FLAC</span>, <span lang="EN-US">DSDIFF</span>, DSF, RIFF, AIFF и, к
+сожалению, нет поддержки <span lang="EN-US">CUE</span>. Но его не обязательно
+покупать, плеер в пробной версии позволяет прослушивать музыку без каких-либо
+ограничений в течение 30 минут, а после просто закрывается, ни что не мешает
+открыть его заново и использовать ещё 30 минут, и так пока не надоест.</p>
+
+<p class="MsoNormal" style="text-align:justify">Все недостатки перевешивает его
+вариативность и отличный звук. Плеер позволяет добиться очень качественного
+звучания. Цифровой фильтр и модулятор это основная часть сигма-дельта ЦАП, их
+различные варианты как раз и реализованы внутри этого плеера, что позволяет
+подобрать качество цифровой обработки в зависимости от быстродействия
+компьютера. С использованием совместно с Beaglebone black или Amanero, HQPlayer
+становится тонко настраиваемым сигма-дельта цифро-аналоговым преобразователем,
+с огромными вычислительными ресурсами в виде вашего компьютера.</p>
+
+<p class="MsoNormal" style="text-align:justify">Для подключения к Beaglebone black
+нужно выбрать в настройках HQPlayer(а) «<span lang="EN-US">Backend</span>» – «<span lang="EN-US">NetworkAudioAdapter</span>» и в выпадающем списке «<span lang="EN-US">Device</span>»
+должен появится «<span lang="EN-US">Botic</span>7: <span lang="EN-US">Botic</span>»,
+при условии, что основной компьютер с HQPlayer и микрокомпьютер Beaglebone
+находятся в одной подсети, и имеется <span lang="EN-US">DHCP</span><span lang="EN-US"> </span>сервер. В параметре «<span lang="EN-US">Default</span><span lang="EN-US"> </span><span lang="EN-US">Output</span><span lang="EN-US"> </span><span lang="EN-US">Mode</span>» выбираем «<span lang="EN-US">SDM</span> (<span lang="EN-US">DSD</span>)», параметр «<span lang="EN-US">Bit</span><span lang="EN-US">
+</span><span lang="EN-US">rate</span> (/<span lang="EN-US">limit</span>)» для
+начала лучше выставить в «44.1к х64». В разных версиях плеера 3 и 4 настройки
+выглядят по-разному:</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><img src="assets/img/image048.png" width="395" height="967" border="0"></p>
+
+<p class="MsoNormal" style="text-align:justify"><img src="assets/img/image049.jpg" width="363" hspace="12" height="1" align="left"></p>
+
+<p class="MsoNormal" style="text-align:justify">А дальнейшие настройки уже
+подберёте эмпирическим путём, исходя из вашего вкуса(слуха) и
+производительности компьютера. </p>
+
+<p class="MsoNormal" style="text-align:justify">К <span lang="EN-US">DSD</span><span lang="EN-US"> </span>выходам Beaglebone black нужно подключить ФНЧ, про который
+писалось ранее. Для того, что бы убрать шумы от питания и пульсации
+светодиодов, лучше всего использовать гальваническую развязку. Вот и всё, устройство
+готово!</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b>Итого</b></p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-align:justify;text-indent:-18.0pt"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Структура получилась почти <span lang="EN-US">open</span><span lang="EN-US"> </span><span lang="EN-US">source</span>: Beaglebone black изначально
+был открытым проектом, на официальном сайте есть документация и полная схема
+микрокомпьютера, исходные коды <span lang="EN-US">I</span>2<span lang="EN-US">S</span><span lang="EN-US"> </span>драйвера выложены в открытом доступе, схема
+реклокера(генератора тактовой частоты) так же опубликована под открытой
+лицензией. Единственным проприетарным компонентом является HQPlayer, жаль, что
+нет альтернативы с открытым исходным кодом.</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-align:justify;text-indent:-18.0pt"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Стоимость Beaglebone black примерно 3800 руб., генераторы +
+расходники где-то от 600 руб.</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-align:justify;text-indent:-18.0pt"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Устройство отличается превосходным звуком, особенно при
+воспроизведении чистого <span lang="EN-US">DSD</span><span lang="EN-US"> </span>или
+конвертации <span lang="EN-US">PCM</span><span lang="EN-US"> </span>через HQPlayer.
+</p>
+
+<p class="MsoNormal" style="text-align:justify">Минусы есть только у плеера и уже
+были перечислены.</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b><span style="font-size:14.0pt;
+line-height:115%">Проект </span></b><b><span style="font-size:14.0pt;
+line-height:115%;font-family:&quot;Helvetica&quot;,sans-serif">DSC</span></b><b><span style="font-size:14.0pt;line-height:115%"> и ПЛИС</span></b></p>
+
+<p class="MsoNormal" style="text-align:justify">Ну и в заключении, как говорится,
+вишенка на торте.</p>
+
+<p class="MsoNormal" style="text-align:justify">При воспроизведении через ФНЧ
+есть только один недостаток – это то, что сигнал на выходе одноуровневый, но при
+высокой частоте дискретизации влияние шума сводится к минимуму, к тому же при
+определенных затратах можно решить и эту проблему. Проект <span lang="EN-US">DIY</span>
+ЦАПа «<span lang="EN-US">DSC</span>» Павла Погодина, про который уже упоминалось,
+может стать высококлассной альтернативой технологии <span lang="EN-US">DEM</span>.
+Вот только существует одна проблема, судя по всему стоимость коммерческого ЦАП
+по схеме Павла будет довольно высокой. Даже китайские <span lang="EN-US">DIY</span><span lang="EN-US"> </span>платы, собранные по первым версиям «<span lang="EN-US">DSC</span>»
+имели цену более 10000 рублей, а ещё добавится стоимость прецизионных
+компонентов, стоимость питания и стоимость корпуса. </p>
+
+<p class="MsoNormal" style="text-align:justify">Можно конечно копить деньги и ждать
+выхода цап, но лично меня это не устраивает и я решил перенести проект «<span lang="EN-US">DSC</span>» на ПЛИС(Программируемая логическая интегральная схема),
+надеюсь Павел не останется в обиде за это.</p>
+
+<p class="MsoNormal">Для сборки понадобится ПЛИС, если не знаете что это, можете
+пройти по  <a href="http://electrik.info/microcontroller/1501-chto-takoe-plis-prostym-yazykom-dlya-nachinayuschih.html">ссылке</a></p>
+
+<p class="MsoNormal">Выбрана была одна из самых дешёвых - Altera MAX
+II(EPM240T100C5) в ней 240 логических элементов и 100 выводов. Для современных ПЛИС
+— это весьма скромные показатели, но зато стоит такая ПЛИС от 500 руб.</p>
+
+<p class="MsoNormal">За основу была взята  <a href="https://puredsd.ru/DSC252.pdf">схема</a> версии DSC
+2.5.2/2.6.2</p>
+
+<p class="MsoNormal">Основой в проекте «<span lang="EN-US">DSC</span>» является
+сдвиговый регистр 74AHCT595, 8 таких регистров формируют один звуковой канал,
+правый или левый. Первые четыре регистра подключены друг к другу, составляя,
+как бы, один большой сдвиговый регистр на 32 параллельных выхода, эти четыре
+регистра формируют положительную волну. Другие четыре регистра подключены друг
+к другу аналогичным образом формируют отрицательную волну. На вход первых
+четырех регистров подаются <span lang="EN-US">DSD</span><span lang="EN-US"> </span>данные
+в исходном виде, а на вход других четырех эти же данные только с инверсией. К
+параллельным выходам этих регистров подключены резисторы, соединенные в две
+шины, одна для положительной волны другая для отрицательной волны. &nbsp;Эти шины
+формируют балансный аудиовыход.</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><img id="Рисунок 40" src="assets/img/image050.png" width="416" height="446" border="0"></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">Принцип работы «<span lang="EN-US">DSC</span>» похож на
+принцип работы мультибитного ЦАП, только данные на выходах меняются постоянно,
+а не по кадрам <span lang="EN-US">LRCK</span> и каждый бит данных имеет
+одинаковый вес. Выходной сигнал в таком ЦАП по сути является суммой отдельных
+сигналов с выходов регистров.</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal"><b>Графический проект </b></p>
+
+<p class="MsoNormal">Что интересно, в библиотеке среды разработки Quartus Prime,
+в которой и будет компилироваться прошивка для ПЛИС, есть готовая модель
+сдвигового регистра, именно того что используется в оригинальном «<span lang="EN-US">DSC</span>», 74AHCT595. </p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><img id="Рисунок 8" src="assets/img/image051.jpg" width="179" height="268" border="0"></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">А так же, в Quartus Prime можно собрать логическую схему полностью
+в графическом виде, не изучая ни каких языков описания и программирования. Сделать
+схему достаточно просто, не сложнее чем в программах для рисования схем,
+останется только назначить входы и выходы ПЛИС и скомпилировать проект.</p>
+
+<p class="MsoNormal"><img id="Рисунок 41" src="assets/img/image052.jpg" width="755" height="193" border="0"></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">Про то, где скачать, как установить и настроить Quartus
+Prime, можно прочитать  <a href="https://marsohod.org/intel-quartus-prime/392-ustanovka-intel-quartus-prime-lite-edition">тут</a>
+</p>
+
+<p class="MsoNormal">Подробные видео уроки по работе с Quartus можете посмотреть
+вот  <a href="https://www.youtube.com/watch?v=HHKZroRlJR8&amp;list=PL4UMfOeGYsvZTAJkgY3XfsrFyK1laAchO">тут</a>
+</p>
+
+<p class="MsoNormal">Но есть проблема, по сравнению с оригинальным «<span lang="EN-US">DSC</span>» в выбранный ПЛИС(Altera MAX II) целиком схема не влезет,
+поэтому придётся её упростить. У MAX II всего 100 выводов, при чём, не все из
+них можно использовать, а для «<span lang="EN-US">DSC</span>» нужно минимум 128
+выводов. По этой причине придется отказаться от балансного выхода, будет не «канон»
+но не переживайте, чуть позже расскажу как сделать полный вариант. А пока
+отложим в сторону сдвиговые регистры отрицательной волны и лишние логические элементы
+для инверсии сигнала.</p>
+
+<p class="MsoNormal">После этого останется только назначить выводы,
+скомпилировать проект и загрузить в ПЛИС, как это сделать рассказано  <a href="https://soltau.ru/index.php/plis/item/406-kak-podgotovit-i-zagruzit-proekt-v-plis-altera">тут</a>&nbsp;
+</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">Для упрощения задачи готовые проекты можно будет скачать 
+<a href="https://github.com/Mak2k2/DSC">отсюда</a><span lang="EN-US"> </span></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">После загрузки прошивки нужно подключить резисторы к пинам
+ПЛИС и обьединить их выходы, согласно оригинальной схемы «<span lang="EN-US">DSC</span>»:</p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><img id="Рисунок 38" src="assets/img/image053.png" width="560" height="379" border="0"></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">Далее достаточно будет к общему выходу резисторов подключить
+ФНЧ и конденсатор, чтобы убрать паразитные высокие частоты и постоянную
+составляющую сигнала, как уже было рассмотрено ранее:</p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><img id="Рисунок 10" src="assets/img/image054.jpg" width="629" height="223" border="0"></p>
+
+<p class="MsoNormal">Выход ФНЧ подключаем к усилителю, а на входные контакты
+подаем <span lang="EN-US">DSD</span><span lang="EN-US"> </span><span lang="EN-US">c</span><span lang="EN-US"> </span><span lang="EN-US">Beaglebone</span><span lang="EN-US"> </span><span lang="EN-US">black</span> или Amanero. Вот и получилась облегчённая версия проекта
+«<span lang="EN-US">DSC</span>».</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal"><b>Проект на </b><b><span lang="EN-US">Verilog</span>, </b><b><span lang="EN-US">stereo</span></b></p>
+
+<p class="MsoNormal">Для оптимизации и расширения возможностей я перенёс логику
+работы «<span lang="EN-US">DSC</span>» на язык описания схем Verilog <span lang="EN-US">HDL</span>, что практически в два раза сократило количество
+используемых логических элементов в ПЛИС. Для наглядности создан смешанный
+проект, где верхний уровень будет в графическом представлении, а вложенные
+блоки будут являться кодом Verilog.</p>
+
+<p class="MsoNormal"><img id="Рисунок 42" src="assets/img/image055.jpg" width="770" height="321" border="0"></p>
+
+<p class="MsoNormal">Блоки с названием «<span lang="EN-US">SR</span>» это сдвиговые
+регистры, по сравнению с 74AHCT595 они значительно упрощены, их код на языке Verilog
+выглядит так:</p>
+<div class="code">
+<p class="MsoNormalCxSpMiddle" style="margin-top: 30px;margin-bottom:0cm;margin-bottom:.0001pt;
+line-height:80%"><i><span lang="EN-US">module SR #(</span></i></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-bottom:0cm;margin-bottom:.0001pt;
+line-height:80%"><i><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; parameter output_pins = 32</span></i></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-bottom:0cm;margin-bottom:.0001pt;
+line-height:80%"><i><span lang="EN-US">)(</span></i></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-bottom:0cm;margin-bottom:.0001pt;
+line-height:80%"><i><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; input clk, data,</span></i></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-bottom:0cm;margin-bottom:.0001pt;
+line-height:80%"><i><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; output
+[0:output_pins-1]out</span></i></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-bottom:0cm;margin-bottom:.0001pt;
+line-height:80%"><i><span lang="EN-US">);</span></i></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-bottom:0cm;margin-bottom:.0001pt;
+line-height:80%"><i><span lang="EN-US">&nbsp;</span></i></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-bottom:0cm;margin-bottom:.0001pt;
+line-height:80%"><i><span lang="EN-US">reg [output_pins-1:0]data_reg;</span></i></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-bottom:0cm;margin-bottom:.0001pt;
+line-height:80%"><i><span lang="EN-US">&nbsp;</span></i></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-bottom:0cm;margin-bottom:.0001pt;
+line-height:80%"><i><span lang="EN-US">always @(posedge clk)</span></i></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-bottom:0cm;margin-bottom:.0001pt;
+line-height:80%"><i><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ data_reg &lt;= {data_reg[output_pins-2:0],
+data};</span></i></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-bottom:0cm;margin-bottom:.0001pt;
+line-height:80%"><i><span lang="EN-US">&nbsp;</span></i></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-bottom:0cm;margin-bottom:.0001pt;
+line-height:80%"><i>assign out = data_reg;</i></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-bottom:0cm;margin-bottom:.0001pt;
+line-height:80%"><i>&nbsp; </i></p>
+
+<p class="MsoNormalCxSpMiddle" style="margin-bottom:5cm;margin-bottom:.0001pt;
+line-height:80%"><i>endmodule </i></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+</div>
+
+<p class="MsoNormal">Ещё в этом варианте, специально для Beaglebone black,
+добавлен селектор для переключения внешних генераторов тактовых импульсов. На
+большинстве качественных генераторов тактовых импульсов имеется управляющий
+контакт, когда на этом контакте логическая единица генератор работает, а когда
+логический ноль нет. Располагаются управляющие контакты обычно там, где
+нарисован «ключ» - это небольшой кружок в каком-либо углу генератора. </p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><img id="Рисунок 48" src="assets/img/image056.jpg" alt="https://sc02.alicdn.com/kf/HTB1UBlhPhnaK1RjSZFtq6zC2VXae/Active-crystal-5032-16M-16MHZ-16-000Mhz.jpg" width="385" height="362" border="0"></p>
+
+<p class="MsoNormal" style="text-align:center" align="center">&nbsp;</p>
+
+<p class="MsoNormal">Таким образом если соединить выходы двух генераторов, через
+резисторы номиналом 33 Ом., можно реализовать переключение под необходимую
+частотную сетку. Ниже приведен модуль, который переключает состояние контактов
+в зависимости от частоты дискретизации. Контакт <b>P9_24</b> на Beaglebone
+black следует соединить с контактом <b><span lang="EN-US">CLK</span>_</b><b><span lang="EN-US">select</span></b><span lang="EN-US"> </span>на ПЛИС, а выходы <b><span lang="EN-US">Clock</span>44</b>, <b><span lang="EN-US">Clock</span>48</b> соответственно
+к управляющим входам генераторов.</p>
+
+<p class="MsoNormal"><img id="Рисунок 43" src="assets/img/image057.jpg" width="707" height="145" border="0"></p>
+
+<p class="MsoNormal"><span lang="EN-US">&nbsp;</span></p>
+
+<p class="MsoNormal">Исходный код<span lang="EN-US">:</span></p>
+
+<div class="code">
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%"><i><span lang="EN-US">module
+switch(</span></i></p>
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%"><i><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; input
+clk_select,</span></i></p>
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%"><i><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; output
+clock44,</span></i></p>
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%"><i><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; output
+clock48</span></i></p>
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%"><i><span lang="EN-US">);</span></i></p>
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%"><i><span lang="EN-US">&nbsp;</span></i></p>
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%"><i><span lang="EN-US">assign
+clock44 = clk_select ? 1 : 0;</span></i></p>
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%"><i><span lang="EN-US">assign
+clock48 = clk_select ? </span>0 : 1;</i></p>
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%"><i>&nbsp;</i></p>
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%"><i><span lang="EN-US">endmodule</span></i></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+</div>
+
+<p class="MsoNormal">Ещё для возможности автоматического включения-выключения
+звукового выхода добавлена логическая схема <span lang="EN-US">Mute</span>, согласно
+оригинальной схемы «<span lang="EN-US">DSC</span>».</p>
+
+<p class="MsoNormal"><img id="Рисунок 44" src="assets/img/image058.jpg" width="766" height="153" border="0">&nbsp;</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">Исходный код прилагается:</p>
+
+<div class="code">
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%"><i><span lang="EN-US">module
+Mute(</span></i></p>
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%"><i><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; input
+mute,</span></i></p>
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%"><i><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; input
+dsd_on,</span></i></p>
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%"><i><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; output
+mute_out</span></i></p>
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%"><i><span lang="EN-US">);</span></i></p>
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%"><i><span lang="EN-US">&nbsp;</span></i></p>
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%"><i><span lang="EN-US">&nbsp;</span></i></p>
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%"><i><span lang="EN-US">assign&nbsp;&nbsp; mute_out
+= ~(mute | ~dsd_on);</span></i></p>
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%"><i><span lang="EN-US">&nbsp;</span></i></p>
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%"><i><span lang="EN-US">&nbsp;</span></i></p>
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%"><i>endmodule</i></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+</div>
+
+<p class="MsoNormal">Элемент <span lang="EN-US">Mute</span><span lang="EN-US"> </span>реализует
+только логику переключения состояния контакта <b><span lang="EN-US">Mute</span>_</b><b><span lang="EN-US">OUT</span></b>, для реальной работы <span lang="EN-US">Mute</span><span lang="EN-US"> </span>нужно устройство, которое отключает аудиовыход ЦАПа. Есть
+различные способы реализации, например, в «<span lang="EN-US">DSC</span>» версии
+2.5.2 используется управляемый аналоговый переключатель, но что именно
+использовать в целом дело вкуса. Можно обойтись вообще без <span lang="EN-US">Mute</span>,
+ни чего страшного не произойдёт, будут только слышны одиночные щелчки при
+ручном переключении треков.</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal"><b>Проект на </b><b><span lang="EN-US">Verilog</span>, </b><b><span lang="EN-US">mono</span></b></p>
+
+<p class="MsoNormal">В заключении, как и обещал, вариант реализации «<span lang="EN-US">DSC</span>» наиболее близкий к оригиналу. </p>
+
+<p class="MsoNormal">Как уже было написано, на MAX II оригинальный проект
+попросту не влезет, из-за недостаточного количества выходных портов. Решения у
+проблемы есть два: первое, купить ПЛИС с большим количеством портов, второе,
+купить две ПЛИС и реализовать правый и левый канал раздельно. Т.к. стоимость
+одной ПЛИС, с достаточным количеством(128) выходных портов, гораздо выше чем
+стоимость двух ПЛИС Altera MAX II, вывод напрашивается сам собой. Тем более
+считается, что так называемое «Dual Mono» - двойное моно звучит лучше, чем
+обычное стерео, хороший повод проверить это утверждение. </p>
+
+<p class="MsoNormal">Для реализации задуманного нам понадобится создать элемент с
+инверсией сигнала и обязательно с синхронными выходами, потому как, уже было
+написано ранее, в балансной схеме даже небольшие различия могут оказать сильное
+влияние на звуковой сигнал.</p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><img id="Рисунок 29" src="assets/img/image059.jpg" width="565" height="214" border="0"></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">На вход <b><span lang="EN-US">data</span></b> подается выход
+данных правого или левого канала <span lang="EN-US">DSD</span>, а на вход <b><span lang="EN-US">clk</span></b> подается синхронизация <span lang="EN-US">DSD</span>. И
+на выходах получаем прямой и инвертированный поток данных <span lang="EN-US">DSD</span>.</p>
+
+<p class="MsoNormal">Исходный код:</p>
+
+<div class="code">
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%"><span lang="EN-US">module Inverter
+(</span></p>
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; input
+data, clk,</span></p>
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; output
+reg data_out = 0, invert_data_out = 0</span></p>
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%">);</p>
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%">&nbsp;</p>
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%"><span lang="EN-US">reg check
+= 0;</span></p>
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%"><span lang="EN-US">&nbsp;</span></p>
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%"><span lang="EN-US">always @(posedge
+clk)</span></p>
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%"><span lang="EN-US">begin&nbsp;&nbsp;&nbsp; </span></p>
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(data)
+check = 1;</span></p>
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(check)</span></p>
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; begin</span></p>
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ data_out
+&lt;= data;</span></p>
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ invert_data_out
+&lt;= ~data;</span></p>
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>end</p>
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%">end</p>
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%">&nbsp;</p>
+
+<p class="MsoNormalCxSpMiddle" style="line-height:80%">endmodule</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+</div>
+
+<p class="MsoNormal">Далее подключаем созданный элемент, как и в предыдущих
+версиях, к сдвиговым регистрам.</p>
+
+<p class="MsoNormal"><img id="Рисунок 34" src="assets/img/image060.jpg" width="768" height="228" border="0"></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">К выходам сдвиговых регистров нужно подключить(припаять) резисторы
+как в оригинальной схеме, и в итоге получается балансный выход. На первой ПЛИС
+- правый канал «Dual Mono», левый канал аналогичным образом реализуется на
+второй ПЛИС. Выходы <b>P9_30(</b><b><span lang="EN-US">dsd</span>1)</b> и <b>P9_41(</b><b><span lang="EN-US">dsd</span>2)</b> микрокомпьютера Beaglebone black нужно подключить к
+входу <b><span lang="EN-US">dsd</span>1</b> на первой ПЛИС и такому же входу на
+второй ПЛИС, выход микрокомпьютера <b>P9_31(</b><b><span lang="EN-US">BCK</span>)</b>
+будет общим для обеих ПЛИС, его следует подключить к входу <b><span lang="EN-US">dsd</span>_</b><b><span lang="EN-US">clk</span></b>.</p>
+
+<p class="MsoNormal">Номера контактов ПЛИС указывать не буду, т.к. в дальнейшем проекты
+скорее всего будут обновляться и номера могут измениться. Узнать их, или даже
+поменять под себя, можно будет открыв проект в Quartus Prime.</p>
+
+<p class="MsoNormal">Вот теперь проект на ПЛИС практически соответствует
+оригинальной схеме «<span lang="EN-US">DSC</span>». В качестве резисторов на
+выходах лучше всего использовать готовые резисторные сборки, существуют сборки
+довольно неплохой точности, что будет дополнительным плюсом к характеристикам.
+Трансформаторы подключаются к общей шине резисторов, точно также как в оригинальном
+«<span lang="EN-US">DSC</span>».</p>
+
+<p class="MsoNormal"><img id="Рисунок 39" src="assets/img/image061.jpg" width="768" height="288" border="0"></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal"><span lang="EN-US">R</span>_<span lang="EN-US">OUT</span>_<span lang="EN-US">HOT</span> – Это вход для шины первого регистра, <span lang="EN-US">R</span>_<span lang="EN-US">OUT</span>_<span lang="EN-US">COLD</span><span lang="EN-US"> </span>– это
+вход шины второго регистра.</p>
+
+<p class="MsoNormal">Ну вот и готов проект максимально близкий к «<span lang="EN-US">DSC</span>», надеюсь по звучанию он будет не сильно уступать
+оригиналу. В идеале нужна переделка питания, но даже на моём тестовом ПЛИС, с
+1% резисторами и стандартным питанием от импульсного блока, звук получился
+очень хорош. А с качественным питанием, и точными резисторами вероятно будет
+ещё лучше. </p>
+
+<p class="MsoNormal" style="text-align:justify"><b>Итого</b></p>
+
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-18.0pt"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Стоимость от 600 рублей + Beaglebone black или <span lang="EN-US">Amanero</span>.</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-18.0pt"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Звук ещё лучше, в сравнении с воспроизведением <span lang="EN-US">DSD</span><span lang="EN-US"> </span>через ФНЧ.</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-18.0pt"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Возможность полной кастомизации и добавления новых алгоритмов
+работы.</p>
+
+<p class="MsoListParagraphCxSpLast" style="text-indent:-18.0pt"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Значительно проще в реализации по сравнению с оригинальным «<span lang="EN-US">DSC</span>».</p>
+
+<p class="MsoNormal">Минусы не обнаружены, по крайней мере пока.</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify">Описанный в статье способ
+прослушивания с конвертацией <span lang="EN-US">PCM</span><span lang="EN-US"> </span>в
+<span lang="EN-US">DSD</span> считаю, без тени сомнения, наилучшим вариантом
+воспроизведения популярных <span lang="EN-US">PCM</span> форматов, особенно если
+использовать «<span lang="EN-US">DSC</span>». Альтернативой может выступать
+только популяризация и дальнейшее развитие форматов, в частности DSD. Положа
+руку на сердце скажу, что какие бы я цифровые фильтры, частоту дискретизации и
+модуляторы не использовал, а чистый DSD всё равно звучит лучше. К тому же при
+воспроизведении он не требует никакой цифровой обработки, не нужны ни фильтры,
+ни модуляторы, ни <span lang="EN-US">N</span>oise shaping, от части потому что
+цифровая обработка уже происходила при записи. Но теоретически, при
+использовании хорошего компаратора и высокой частоты возможно подобие
+аналоговой записи, без использования цифровой обработки вообще. Очень жаль, что
+<span lang="EN-US">DSD</span> не имеет такой же распространённости как <span lang="EN-US">CDDA</span> или хотя бы <span lang="EN-US">FLAC</span>. Собственно,
+желание хоть немного популяризировать формат и было главной мотивацией для
+написания этой статьи. Надеюсь вам она понравилась.</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify"><b><span style="font-size:16.0pt;
+line-height:115%">Заключение</span></b></p>
+
+<p class="MsoNormal" style="text-align:justify">История развития цифровой
+звуковоспроизводящей аппаратуры очень терниста, и в огромной степени зависела
+от массового потребителя, появлялись и уходили в забвение различные форматы, но
+по-настоящему массовыми стали только <span lang="EN-US">CDDA</span><span lang="EN-US"> </span>и <span lang="EN-US">MP</span>3. Хорошо это или плохо рассудит
+история. Очень интересно по какому пути дальше пойдет прогресс: по пути
+развития форматов, и в связи с этим увеличением объема цифровой записи, или по
+пути наращивания вычислительных мощностей, для более сложной цифровой
+обработки. Сейчас многим становится понятно, система вышла из равновесия,
+перемены назрели, если производители и звукозаписывающие компании не захотят
+сами что-либо менять, то перемены пройдут без них. Мы живем как раз в этот
+переломный момент, и хотелось бы, что бы больше людей действительно понимало,
+что такое цифровая запись, и как реально происходит воспроизведение цифрового
+звука. Хочется, чтобы больше людей не под диктовку маркетологов, а
+действительно осознано делало свой выбор!</p>
+
+<p class="MsoNormal" style="text-align:justify">Спасибо за внимание!</p>
+
+<p class="MsoNormal" style="text-align:justify">&nbsp;</p>
+
+</div>
+
+
+
+
+</body></html>
